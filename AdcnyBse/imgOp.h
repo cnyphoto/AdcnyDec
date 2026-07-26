@@ -22,6 +22,7 @@ public:
 	cv::Mat enhancedPhotoForMultiply(cv::Mat mat);
 	cv::Mat contrastRatio(cv::Mat mat);
 	std::map<std::string, int> readCalINI(const std::string& filename);
+	std::map<std::string, std::string> readCalINIStr(const std::string& filename);
 private:
 	std::string folder;
 };

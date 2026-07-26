@@ -1,4 +1,5 @@
 #pragma once
+#include <memory>
 #include <vector>
 #include <Target.h>
 #include <imgOp.h>
@@ -58,7 +59,7 @@ private:
     std::mutex mtx;
     std::condition_variable convar;
     bool start;
-    std::vector<YoloTrt*> yolotrts;
+    std::vector<std::unique_ptr<YoloTrt>> yolotrts;
     int decw;
     int dech;
     bool trained;

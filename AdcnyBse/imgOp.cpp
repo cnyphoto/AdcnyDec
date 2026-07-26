@@ -108,3 +108,24 @@ std::map<std::string, int> imgOp::readCalINI(const std::string& filename)
 
 	return content;
 }
+
+std::map<std::string, std::string> imgOp::readCalINIStr(const std::string& filename)
+{
+	std::map<std::string, std::string> content;
+	std::ifstream file(filename);
+	std::string line, key, value, section;
+
+	while (std::getline(file, line)) {
+		if (line.empty() || line[0] == ';' || line[0] == '#') continue;
+		if (line[0] == '[') {
+			section = line.substr(1, line.find(']') - 1);
+			continue;
+		}
+		std::stringstream ss(line);
+		std::getline(ss, key, '=');
+		std::getline(ss, value);
+		content[section + "_" + key] = value;
+	}
+
+	return content;
+}

@@ -17,6 +17,7 @@ extern "C" {
 	__declspec(dllimport) class Yolotrt;
 	__declspec(dllimport) class FolderWare;
 	__declspec(dllimport) class VideoReadWare;
+	__declspec(dllimport) class VdoWare;
 	__declspec(dllimport) class MvsWare;
 	__declspec(dllimport) class WholeDec;
 	__declspec(dllimport) class Crack;

@@ -11,10 +11,7 @@ InferStore::InferStore()
 	start = false;
 }
 
-InferStore::~InferStore()
-{
-	
-}
+InferStore::~InferStore() = default;
 
 
 void InferStore::infer(cv::Mat img, std::vector<std::vector<int>> bboxs, long long coild, int modetype, int imgNum, int saveType)
@@ -171,9 +168,9 @@ void InferStore::setMods(std::vector<modpar> mods, std::string folder)
 
 	for (size_t i = 0; i < mods.size(); i++)
 	{
-		YoloTrt* yo = new YoloTrt();
+		auto yo = std::make_unique<YoloTrt>();
 		yo->init(mods[i].modpath,mods[i].slot, mods[i].conf, mods[i].name);
-		this->yolotrts.push_back(yo);
+		this->yolotrts.push_back(std::move(yo));
 	}
 }
 

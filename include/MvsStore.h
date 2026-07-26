@@ -1,4 +1,10 @@
 #pragma once
+#ifdef ADCNYMVS_EXPORTS
+#define ADCNYMVS_API __declspec(dllexport)
+#else
+#define ADCNYMVS_API __declspec(dllimport)
+#endif
+
 #include <MvCameraControl.h>
 #include <stdio.h>
 #include <Windows.h>
@@ -9,7 +15,7 @@
 #include <opencv2/highgui.hpp>
 
 
-class MvsStore
+class ADCNYMVS_API MvsStore
 {
 public:
     MvsStore(int drivesNum);
@@ -41,7 +47,7 @@ public:
             int nIp3 = ((pstMVDevInfo->SpecialInfo.stGigEInfo.nCurrentIp & 0x0000ff00) >> 8);
             int nIp4 = (pstMVDevInfo->SpecialInfo.stGigEInfo.nCurrentIp & 0x000000ff);
 
-            // ch:´òÓ¡µ±Ç°Ïà»úipºÍÓÃ»§×Ô¶¨ÒåÃû×Ö | en:print current ip and user defined name
+            // ch:ï¿½ï¿½Ó¡ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ipï¿½ï¿½ï¿½Ã»ï¿½ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ | en:print current ip and user defined name
             printf("CurrentIp: %d.%d.%d.%d\n", nIp1, nIp2, nIp3, nIp4);
             printf("UserDefinedName: %s\n\n", pstMVDevInfo->SpecialInfo.stGigEInfo.chUserDefinedName);
         }

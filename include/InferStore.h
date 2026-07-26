@@ -1,4 +1,5 @@
 #pragma once
+#include <memory>
 #include <vector>
 #include <Target.h>
 #include <imgOp.h>
@@ -26,12 +27,12 @@ public:
 
     InferStore();
     ~InferStore();
-    void infer(cv::Mat, std::vector<std::vector<int>> bboxs, long long coild, int modetype, int imgNum, int saveType);
+    void infer(cv::Mat, std::vector<std::vector<int>> bboxs, long long coild, int modetype,int imgNum,int saveType);
     void inferForeverToStr(std::function<void(std::vector<std::string>)> f);
     void setStart(bool b);
     void setMods(std::vector<modpar> mods, std::string folder);
 
-    void nmsforiou(std::vector<Detection>& res, std::vector<Detection> dets, std::vector<Detection> olddecs, float nms_thresh = 0.5)
+    void nmsforiou(std::vector<Detection>& res, std::vector<Detection> dets, std::vector<Detection> olddecs, float nms_thresh = 0.5) 
     {
         std::sort(dets.begin(), dets.end(), CompareContours());
         for (size_t m = 0; m < dets.size(); ++m) {
@@ -58,7 +59,7 @@ private:
     std::mutex mtx;
     std::condition_variable convar;
     bool start;
-    std::vector<YoloTrt*> yolotrts;
+    std::vector<std::unique_ptr<YoloTrt>> yolotrts;
     int decw;
     int dech;
     bool trained;

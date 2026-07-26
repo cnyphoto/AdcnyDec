@@ -4,6 +4,9 @@
 #include <CameraApt.h>
 #include <ImgCal.h>
 #include <FolderWare.h>
+#include <MvsWare.h>
+#include <VdoWare.h>
+#include <VideoReadWare.h>
 #include <EdgeSin.h>
 #include <Crack.h>
 #include <WholeDec.h>
@@ -16,9 +19,9 @@
 inline std::unique_ptr<CameraApt> createCamera(const std::string& type)
 {
     if (type == "folder") return std::make_unique<FolderWare>();
-    //if (type == "mvs")    return std::make_unique<MvsWare>();
-    //if (type == "vdo")    return std::make_unique<VdoWare>();
-    //if (type == "video")  return std::make_unique<VideoReadWare>();
+    if (type == "mvs")    return std::make_unique<MvsWare>();
+    if (type == "vdo")    return std::make_unique<VdoWare>();
+    if (type == "video")  return std::make_unique<VideoReadWare>();
     return std::make_unique<FolderWare>(); // 默认
 }
 

@@ -21,7 +21,7 @@ void MvsStore::run(std::function<void(cv::Mat, int)> f)
 
     do
     {
-        // ch:³õÊ¼»¯SDK | en:Initialize SDK
+        // ch:åˆå§‹åŒ–SDK | en:Initialize SDK
         nRet = MV_CC_Initialize();
         if (MV_OK != nRet)
         {
@@ -29,7 +29,7 @@ void MvsStore::run(std::function<void(cv::Mat, int)> f)
             break;
         }
 
-        // ch:Ã¶¾ÙÉè±¸ | Enum device
+        // ch:æšä¸¾è®¾å¤‡ | Enum device
         MV_CC_DEVICE_INFO_LIST stDeviceList;
         memset(&stDeviceList, 0, sizeof(MV_CC_DEVICE_INFO_LIST));
         nRet = MV_CC_EnumDevices(MV_GIGE_DEVICE | MV_USB_DEVICE|MV_GENTL_CAMERALINK_DEVICE, &stDeviceList);
@@ -68,7 +68,7 @@ void MvsStore::run(std::function<void(cv::Mat, int)> f)
 
                 if (!re)
                 { 
-                    // ch:Ñ¡ÔñÉè±¸²¢´´½¨¾ä±ú | Select device and create handle
+                    // ch:é€‰æ‹©è®¾å¤‡å¹¶åˆ›å»ºå¥æŸ„ | Select device and create handle
                     nRet = MV_CC_CreateHandle(&handle, pDeviceInfo);
                     if (MV_OK != nRet)
                     {
@@ -87,7 +87,7 @@ void MvsStore::run(std::function<void(cv::Mat, int)> f)
         }
 
 
-        // ch:´ò¿ªÉè±¸ | Open device
+        // ch:æ‰“å¼€è®¾å¤‡ | Open device
         nRet = MV_CC_OpenDevice(handle);
         if (MV_OK != nRet)
         {
@@ -96,7 +96,7 @@ void MvsStore::run(std::function<void(cv::Mat, int)> f)
         }
 
 
-        // ch:ÉèÖÃ´¥·¢Ä£Ê½Îªoff | eb:Set trigger mode as off
+        // ch:è®¾ç½®è§¦å‘æ¨¡å¼ä¸ºoff | eb:Set trigger mode as off
         nRet = MV_CC_SetEnumValue(handle, "TriggerMode", MV_TRIGGER_MODE_ON);
         if (MV_OK != nRet)
         {
@@ -104,7 +104,7 @@ void MvsStore::run(std::function<void(cv::Mat, int)> f)
             break;
         }
 
-        // ch:×¢²á×¥Í¼»Øµ÷ | en:Register image callback
+        // ch:æ³¨å†ŒæŠ“å›¾å›è°ƒ | en:Register image callback
         nRet = MV_CC_RegisterImageCallBackEx(handle, ImageCallBackEx, this);
         if (MV_OK != nRet)
         {
@@ -112,7 +112,7 @@ void MvsStore::run(std::function<void(cv::Mat, int)> f)
             break;
         }
 
-        // ch:¿ªÊ¼È¡Á÷ | en:Start grab image
+        // ch:å¼€å§‹å–æµ | en:Start grab image
         nRet = MV_CC_StartGrabbing(handle);
         if (MV_OK != nRet)
         {
@@ -127,7 +127,7 @@ void MvsStore::run(std::function<void(cv::Mat, int)> f)
             Sleep(1);
         }
 
-        // ch:Í£Ö¹È¡Á÷ | en:Stop grab image
+        // ch:åœæ­¢å–æµ | en:Stop grab image
         nRet = MV_CC_StopGrabbing(handle);
         if (MV_OK != nRet)
         {
@@ -135,7 +135,7 @@ void MvsStore::run(std::function<void(cv::Mat, int)> f)
             break;
         }
 
-        // ch:×¢Ïú×¥Í¼»Øµ÷ | en:Unregister image callback
+        // ch:æ³¨é”€æŠ“å›¾å›è°ƒ | en:Unregister image callback
         nRet = MV_CC_RegisterImageCallBackEx(handle, NULL, NULL);
         if (MV_OK != nRet)
         {
@@ -143,7 +143,7 @@ void MvsStore::run(std::function<void(cv::Mat, int)> f)
             break;
         }
 
-        // ch:¹Ø±ÕÉè±¸ | en:Close device
+        // ch:å…³é—­è®¾å¤‡ | en:Close device
         nRet = MV_CC_CloseDevice(handle);
         if (MV_OK != nRet)
         {
@@ -151,7 +151,7 @@ void MvsStore::run(std::function<void(cv::Mat, int)> f)
             break;
         }
 
-        // ch:Ïú»Ù¾ä±ú | en:Destroy handle
+        // ch:é”€æ¯å¥æŸ„ | en:Destroy handle
         nRet = MV_CC_DestroyHandle(handle);
         if (MV_OK != nRet)
         {
@@ -170,7 +170,7 @@ void MvsStore::run(std::function<void(cv::Mat, int)> f)
     }
 
 
-    // ch:·´³õÊ¼»¯SDK | en:Finalize SDK
+    // ch:ååˆå§‹åŒ–SDK | en:Finalize SDK
     MV_CC_Finalize();
 }
 

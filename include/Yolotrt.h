@@ -80,7 +80,7 @@ public:
         int rl = r - l > img.cols ? img.cols : r - l;
         int bt = b - t > img.rows ? img.rows : b - t;
 
-        return cv::Rect(l < 0 ? 0 : l, t < 0 ? 0 : t, rl, bt);
+        return cv::Rect(l<0?0:l, t<0?0:t, rl, bt);
     }
 
     float iou(float lbox[4], float rbox[4]) {
@@ -103,7 +103,6 @@ public:
         float d = 0;
         for (size_t i = 0; i < num; i++)
         {
-            //std::cout << d << std::endl;
             if (output[start + i] > d)
             {
                 d = output[start + i];
@@ -158,12 +157,9 @@ public:
     std::vector<Detection> boxes = {};
 
 private:
-    // 用于获取engine 输入输出的name
-
     const char* INPUT_BLOB_NAME = "images";
     const char* OUTPUT_BLOB_NAME = "output0";
 
-    // runtime创建engine，engine创建context
     nvinfer1::IRuntime* runtime;
     nvinfer1::ICudaEngine* engine;
     nvinfer1::IExecutionContext* context;
@@ -180,4 +176,5 @@ private:
 
     float connf;
 };
+
 
