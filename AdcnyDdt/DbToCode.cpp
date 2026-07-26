@@ -4,11 +4,16 @@
 #include <iostream>
 
 DbToCode::DbToCode()
+	: dbConn(nullptr)
 {
 }
 
 DbToCode::~DbToCode()
 {
+	if (dbConn) {
+		delete dbConn;
+		dbConn = nullptr;
+	}
 }
 
 void DbToCode::setConstr(std::string sqlip, int port, std::string user, std::string psd, std::string dbName)
@@ -90,31 +95,30 @@ std::vector<modpar> DbToCode::getMod(int sparid) const
 
 void DbToCode::insetData(std::string sql) const
 {
-	/*SqlStore conn;
-	conn.connect(this->constr.sqlip, this->constr.port, this->constr.user, this->constr.psd, this->constr.dbName);
-	conn.update(sql);*/
+	std::lock_guard<std::mutex> lock(dbMtx);
 
-	SqlStore* conn=new SqlStore();
-
-	// 1. 连接数据库（判断是否成功）
-	bool isConnect = conn->connect(
-		this->constr.sqlip,
-		this->constr.port,
-		this->constr.user,
-		this->constr.psd,
-		this->constr.dbName
-	);
-
-	if (!isConnect)
+	// 持久连接：未创建或断线时自动重连
+	if (!dbConn || !dbConn->ping())
 	{
-		std::cerr << "DB connect failed!" << std::endl;
-		return;
+		if (dbConn) {
+			delete dbConn;
+		}
+		dbConn = new SqlStore();
+		if (!dbConn->connect(
+			this->constr.sqlip,
+			this->constr.port,
+			this->constr.user,
+			this->constr.psd,
+			this->constr.dbName))
+		{
+			std::cerr << "DB connect failed!" << std::endl;
+			return;
+		}
 	}
 
 	try
 	{
-		// 2. 执行 SQL（insert/update/delete 通用）
-		bool ret = conn->update(sql);
+		bool ret = dbConn->update(sql);
 		if (!ret)
 		{
 			std::cerr << "SQL exec failed: " << sql << std::endl;
@@ -124,10 +128,6 @@ void DbToCode::insetData(std::string sql) const
 	{
 		std::cerr << "SQL exec exception!" << std::endl;
 	}
-
-	// 3. close connection to prevent leak
-	delete conn;
-	conn = nullptr;	
 }
 
 void DbToCode::combDecData(std::vector<std::vector<int>> bboxs,long long coild,int scoilid)
@@ -139,6 +139,19 @@ void DbToCode::combDecData(std::vector<std::vector<int>> bboxs,long long coild,i
 		sprintf_s(sql, this->sqlStrBses[1].c_str(),0, bboxs[i][0], bboxs[i][1], bboxs[i][2], bboxs[i][3], bboxs[i][4], bboxs[i][5], bboxs[i][6], bboxs[i][7], coild, scoilid);
 		this->insetData(sql);
 	}
+}
+
+void DbToCode::combDecValStr(const std::string& valStr) const
+{
+	char sql[1024] = { 0 };
+	int v[9];
+	long long v9;
+	int v10;
+	sscanf_s(valStr.c_str(), "%d,%d,%d,%d,%d,%d,%d,%d,%d,%lld,%d",
+		&v[0], &v[1], &v[2], &v[3], &v[4], &v[5], &v[6], &v[7], &v[8], &v9, &v10);
+	sprintf_s(sql, this->sqlStrBses[1].c_str(),
+		v[0], v[1], v[2], v[3], v[4], v[5], v[6], v[7], v[8], v9, v10);
+	this->insetData(sql);
 }
 
 void DbToCode::toUpDataImgNum(const int &n,const long long &colid)

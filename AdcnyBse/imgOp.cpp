@@ -24,12 +24,12 @@ void imgOp::saveImg(int num, cv::Mat mat, long long coilnum, int scoild,int dete
 		fd = aaa;
 	}
 
-	std::string folderName =fd+ "\\" + std::to_string(scoild) + "\\" + std::to_string(coilnum); // Òª´´½¨µÄÎÄ¼ş¼ĞÃû³Æ
+	std::string folderName =fd+ "\\" + std::to_string(scoild) + "\\" + std::to_string(coilnum); // è¦åˆ›å»ºçš„æ–‡ä»¶å¤¹åç§°
 
 	if ((_access(folderName.c_str(), 0)) == -1) {
 		std::string command = "mkdir ";
 		command += folderName;
-		int result = system(command.c_str()); // Ö´ĞĞÏµÍ³ÃüÁî
+		int result = system(command.c_str()); // æ‰§è¡Œç³»ç»Ÿå‘½ä»¤
 	}
 
 	char str[100];
@@ -72,7 +72,7 @@ cv::Mat imgOp::enhancedPhotoForMultiply(cv::Mat mat)
 	cv::Mat result;
 	cv::multiply(mat, new_image, result,1);
 
-	// ½«½á¹û×ª»»»Ø8Î»ÎŞ·ûºÅÕûĞÍ
+	// å°†ç»“æœè½¬æ¢å›8ä½æ— ç¬¦å·æ•´å‹
 	result.convertTo(result, CV_8U, 255.0);
 	return result;
 }
@@ -80,8 +80,8 @@ cv::Mat imgOp::enhancedPhotoForMultiply(cv::Mat mat)
 cv::Mat imgOp::contrastRatio(cv::Mat mat)
 {
 	cv::Mat new_image;
-	double alpha = 1.8; // ¶Ô±È¶È¿ØÖÆ (1.0 ±íÊ¾²»±ä)
-	int beta = 0;       // ÁÁ¶È¿ØÖÆ (0 ±íÊ¾²»±ä)
+	double alpha = 1.8; // å¯¹æ¯”åº¦æ§åˆ¶ (1.0 è¡¨ç¤ºä¸å˜)
+	int beta = 0;       // äº®åº¦æ§åˆ¶ (0 è¡¨ç¤ºä¸å˜)
 
 	mat.convertTo(new_image, -1, alpha, beta);
 
@@ -96,10 +96,10 @@ std::map<std::string, int> imgOp::readCalINI(const std::string& filename)
 	std::string key, value;
 
 	while (std::getline(file, line)) {
-		// Ìø¹ı¿ÕĞĞºÍ×¢ÊÍĞĞ
+		// è·³è¿‡ç©ºè¡Œå’Œæ³¨é‡Šè¡Œ
 		if (line.empty() || line[0] == ';' || line[0] == '#' || line[0] == '[') continue;
 
-		// ·Ö¸î¼üºÍÖµ
+		// åˆ†å‰²é”®å’Œå€¼
 		std::stringstream ss(line);
 		std::getline(ss, key, '=');
 		std::getline(ss, value);

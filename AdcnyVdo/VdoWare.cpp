@@ -10,29 +10,29 @@ int GetVideo(const SorcePar& spar, std::function<void(cv::Mat, int)> f,int count
     std::string rtsp1 = "rtsp://admin:a1b2c3d4@192.168.1.64:554/h264/ch1/min/av_stream";
 
 
-    // CAP_FFMPEG£ºÊ¹ÓÃffmpeg½âÂë
+    // CAP_FFMPEGï¼šä½¿ç”¨ffmpegè§£ç 
     cv::VideoCapture stream1 = cv::VideoCapture(rtsp1, cv::CAP_FFMPEG);
 
-	stream1.set(cv::CAP_PROP_BUFFERSIZE, 10); // ÉèÖÃ»º³åÇø´óĞ¡Îª1Ö¡
+	stream1.set(cv::CAP_PROP_BUFFERSIZE, 10); // è®¾ç½®ç¼“å†²åŒºå¤§å°ä¸º1å¸§
     stream1.set(cv::CAP_PROP_FPS, 10);
 
     if (!stream1.isOpened())
     {
-        std::cout << "ÓĞÊÓÆµÁ÷Î´´ò¿ª" << std::endl;
+        std::cout << "æœ‰è§†é¢‘æµæœªæ‰“å¼€" << std::endl;
         return 0;
     }
 
     cv::Mat frame1;
 
     int count = countOut;
-    // // Ê¹ÓÃnamedWindow´´½¨´°¿Ú£¬WINDOW_AUTOSIZE£º×Ô¶¯µ÷Õû´°¿Ú´óĞ¡
+    // // ä½¿ç”¨namedWindowåˆ›å»ºçª—å£ï¼ŒWINDOW_AUTOSIZEï¼šè‡ªåŠ¨è°ƒæ•´çª—å£å¤§å°
     // cv::namedWindow("rtsp_demo", cv::WINDOW_AUTOSIZE);
 
     while (true)
     {
         if (!stream1.read(frame1))
         {
-            std::cout << "ÓĞÊÓÆµÁ÷Î´¶ÁÈ¡" << std::endl;
+            std::cout << "æœ‰è§†é¢‘æµæœªè¯»å–" << std::endl;
             stream1.release();
             GetVideo(spar, f,count);
 			/*return -1;*/
@@ -42,10 +42,10 @@ int GetVideo(const SorcePar& spar, std::function<void(cv::Mat, int)> f,int count
         /*cv::Mat frame1Copy;
         frame1.copyTo(frame1Copy);*/
         count++;
-        // ÏÔÊ¾Ö¡£¨¿ÉÑ¡£©
+        // æ˜¾ç¤ºå¸§ï¼ˆå¯é€‰ï¼‰
         f(frame1, count);
 
-        if (cv::waitKey(spar.filepolling) >= 0) break; // °´ÈÎÒâ¼üÍË³öÑ­»·
+        if (cv::waitKey(spar.filepolling) >= 0) break; // æŒ‰ä»»æ„é”®é€€å‡ºå¾ªç¯
     }
 
 	return 0;
@@ -58,7 +58,7 @@ void processFrame(cv::VideoCapture& cap) {
     cv::Mat frame;
     while (cap.read(frame)) {
         mtx.lock();
-        frames.push_back(frame.clone());  // ¸´ÖÆÖ¡ÒÔ±ÜÃâÏß³Ì¹²ÏíÍ¬Ò»Mat¶ÔÏóµÄÎÊÌâ
+        frames.push_back(frame.clone());  // å¤åˆ¶å¸§ä»¥é¿å…çº¿ç¨‹å…±äº«åŒä¸€Matå¯¹è±¡çš„é—®é¢˜
         mtx.unlock();
     }
 }
@@ -72,14 +72,14 @@ void VdoWare::specificRequest(const SorcePar& spar, std::function<void(cv::Mat, 
     cv::VideoCapture cap("rtsp://admin:a1b2c3d4@192.168.1.64:554/h264/ch1/min/av_stream");
     //cap.set(cv::CAP_PROP_FPS, 10);
     std::thread t(processFrame, std::ref(cap));
-    t.detach();  // »òÕßÊ¹ÓÃjoinµÈ´ıÏß³Ì½áÊø£¬¸ù¾İÊµ¼ÊÇé¿öÑ¡Ôñ
+    t.detach();  // æˆ–è€…ä½¿ç”¨joinç­‰å¾…çº¿ç¨‹ç»“æŸï¼Œæ ¹æ®å®é™…æƒ…å†µé€‰æ‹©
 
     while (true) {
         mtx.lock();
         if (!frames.empty()) {
             cv::Mat frame = frames.back();
             frames.pop_back();
-            // ´¦Àíframe
+            // å¤„ç†frame
             count++;
             f(frame, count);
 
@@ -88,7 +88,7 @@ void VdoWare::specificRequest(const SorcePar& spar, std::function<void(cv::Mat, 
         else {
             mtx.unlock();
         }
-        std::this_thread::sleep_for(std::chrono::milliseconds(5)); // ·ÀÖ¹Ã¦µÈ´ı
+        std::this_thread::sleep_for(std::chrono::milliseconds(5)); // é˜²æ­¢å¿™ç­‰å¾…
     }
 }
 

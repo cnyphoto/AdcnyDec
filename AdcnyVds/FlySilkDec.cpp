@@ -49,8 +49,8 @@ std::vector<std::vector<int>> FlySilkDec::getBboxs(int num)
 		cv::Rect roi(config["roix"], config["roiy"], config["roiw"], config["roih"]);
 
 
-		// ´´½¨ÓÃÓÚ´æ´¢ÇøÓòµÄMat¶ÔÏó
-		cv::Mat mat; // Ö±½ÓÊ¹ÓÃoperator()¸´ÖÆÇøÓò
+		// åˆ›å»ºç”¨äºå­˜å‚¨åŒºåŸŸçš„Matå¯¹è±¡
+		cv::Mat mat; // ç›´æ¥ä½¿ç”¨operator()å¤åˆ¶åŒºåŸŸ
 
 		cv::cvtColor(this->img(roi), mat, cv::COLOR_BGR2GRAY);
 
@@ -62,7 +62,7 @@ std::vector<std::vector<int>> FlySilkDec::getBboxs(int num)
 		int starty1 = mat.rows / 2;
 		
 
-		cv::Mat mat1; // Ö±½ÓÊ¹ÓÃoperator()¸´ÖÆÇøÓò
+		cv::Mat mat1; // ç›´æ¥ä½¿ç”¨operator()å¤åˆ¶åŒºåŸŸ
 
 
 		if (this->rl==1)
@@ -81,7 +81,7 @@ std::vector<std::vector<int>> FlySilkDec::getBboxs(int num)
 		cv::threshold(mat1, dst, config["thresh"], config["maxval"], cv::THRESH_BINARY);
 
 		//cv::imshow("Display window", dst);
-	 //   cv::waitKey(0); // µÈ´ıÓÃ»§°´¼ü£¬0±íÊ¾ÎŞÏŞÆÚµÈ´ı
+	 //   cv::waitKey(0); // ç­‰å¾…ç”¨æˆ·æŒ‰é”®ï¼Œ0è¡¨ç¤ºæ— é™æœŸç­‰å¾…
 	 //   imgValid(dst);
 
 		int nonZeroCount = cv::countNonZero(dst);

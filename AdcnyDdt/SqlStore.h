@@ -13,6 +13,7 @@ public:
 		const std::string& user,
 		const std::string& pwd,
 		const std::string& dbName);
+	bool ping();
 	// 更新操作 insert、delete、update
 	bool update(const std::string& sql);
 	// 查询操作 select

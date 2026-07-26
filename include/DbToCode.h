@@ -1,7 +1,10 @@
 #pragma once
 #include <vector>
 #include <string>
+#include <mutex>
 #include <queue>
+
+class SqlStore;
 #include <InferStore.h>
 #include <Target.h>
 
@@ -30,6 +33,7 @@ public:
 	std::vector<modpar> getMod(int sparid) const;
 	void insetData(const std::string sql) const;
 	void combDecData(std::vector<std::vector<int>> bbox, long long coild, int scoilid);
+	void combDecValStr(const std::string& valStr) const;
 	void toUpDataImgNum(const int& n, const long long& colid);
 	long long combCoilData(bool upCoilum, int arc, char* argv[]);
 	void comCalData(std::vector<std::vector<int>> bboxs, int n);
@@ -44,6 +48,8 @@ private:
 		"insert into `dec`(imgdecid,area,leftt,top,width,height,imgid,edge,decid,coilid,scoilid) values(%d,%d,%d,%d,%d,%d,%d,%d,%d,%lld,%d)",
 	"UPDATE edgecal SET imgid=%d,colorval=%d,edge=%d WHERE id=%d",
 	"UPDATE coilstore SET EndImgId = %d WHERE CoilNum = %lld" };
+	mutable SqlStore* dbConn;
+	mutable std::mutex dbMtx;
 	InferStore* inferstore;
 	std::mutex mtx;
 };

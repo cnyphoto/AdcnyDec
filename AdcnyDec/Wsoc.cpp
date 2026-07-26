@@ -69,6 +69,20 @@ int Wsoc::runSoc(std::string modetype, std::string webSockectIpPort)
             ws->close();
         }
 
+        // 刷出发送队列中的所有消息
+        {
+            std::queue<std::string> toSend;
+            {
+                std::lock_guard<std::mutex> lock(queueMutex);
+                toSend.swap(messageQueue);
+            }
+            while (!toSend.empty())
+            {
+                ws->send(toSend.front());
+                toSend.pop();
+            }
+        }
+
         std::this_thread::sleep_for(std::chrono::milliseconds(499));
     }
 
@@ -102,4 +116,10 @@ void Wsoc::setImgNum(int n)
 void Wsoc::setBoundary(int boundary)//+++++++++++++++++++++++++
 {
     this->boundary = boundary;
+}
+
+void Wsoc::sendMessage(const std::string& msg)
+{
+    std::lock_guard<std::mutex> lock(queueMutex);
+    messageQueue.push(msg);
 }

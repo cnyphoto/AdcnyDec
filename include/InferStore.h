@@ -26,7 +26,7 @@ public:
     InferStore();
     ~InferStore();
     void infer(cv::Mat, std::vector<std::vector<int>> bboxs, long long coild, int modetype,int imgNum,int saveType);
-    void inferForeverToStr(const char* sqlbse, std::function<void(std::vector<std::string>)> f);
+    void inferForeverToStr(std::function<void(std::vector<std::string>)> f);
     void setStart(bool b);
     void setMods(std::vector<modpar> mods, std::string folder);
 

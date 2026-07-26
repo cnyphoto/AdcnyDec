@@ -25,7 +25,7 @@ void InferStore::infer(cv::Mat img, std::vector<std::vector<int>> bboxs, long lo
 }
 
 
-void InferStore::inferForeverToStr(const char* sqlbse, std::function<void(std::vector<std::string>)> f)
+void InferStore::inferForeverToStr(std::function<void(std::vector<std::string>)> f)
 {
     while (true)
     {
@@ -115,8 +115,8 @@ void InferStore::inferForeverToStr(const char* sqlbse, std::function<void(std::v
 
         for (auto& ele : okboxes)
         {
-            char sql[1024] = { 0 };
-            sprintf_s(sql, sqlbse,
+            char buf[128] = { 0 };
+            sprintf_s(buf, "%d,%d,%d,%d,%d,%d,%d,%d,%d,%lld,%d",
                 0,
                 pd.bboxs[2][0],
                 static_cast<int>(ele.bbox[0]),
@@ -128,7 +128,7 @@ void InferStore::inferForeverToStr(const char* sqlbse, std::function<void(std::v
                 ele.class_id,
                 pd.coild,
                 pd.modetype);
-            strarr.push_back(sql);
+            strarr.push_back(buf);
         }
 
         if (strarr.size() > 0)

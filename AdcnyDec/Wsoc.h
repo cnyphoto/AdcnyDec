@@ -2,6 +2,8 @@
 #include <atomic>
 #include <functional>
 #include <string>
+#include <queue>
+#include <mutex>
 
 #ifdef _WIN32
 #pragma comment( lib, "ws2_32" )
@@ -20,12 +22,15 @@ public:
 	void requestStop();
 	bool isStopped() const { return stopRequested.load(); }
 	void setOnExitCallback(std::function<void(int n, long long coilnum)> callback);
+	void sendMessage(const std::string& msg);
 private:
 	long long coilnum;
 	int n;
 	int boundary;
 	std::function<void(int n, long long coilnum)> onExitCallback;
 	std::atomic<bool> stopRequested{ false };
+	std::queue<std::string> messageQueue;
+	std::mutex queueMutex;
 };
 
 

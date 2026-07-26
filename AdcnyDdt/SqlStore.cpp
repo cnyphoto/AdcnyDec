@@ -26,6 +26,11 @@ bool SqlStore::connect(const std::string& ip, const uint16_t port, const std::st
 	return ptr != nullptr;
 }
 
+bool SqlStore::ping()
+{
+	return mysql_ping(conn) == 0;
+}
+
 bool SqlStore::update(const std::string& sql)
 {
 	if (mysql_query(conn, sql.c_str()))
