@@ -3,15 +3,9 @@
 
 
 
-FlySilkDec::FlySilkDec()
-{
-	this->edgeCal = nullptr;
-}
+FlySilkDec::FlySilkDec() = default;
 
-FlySilkDec::~FlySilkDec()
-{
-	std::cout << "FlySilkDec" << std::endl;
-}
+FlySilkDec::~FlySilkDec() = default;
 
 
 int FlySilkDec::imgValid(cv::Mat mat)
@@ -54,9 +48,9 @@ std::vector<std::vector<int>> FlySilkDec::getBboxs(int num)
 
 		cv::cvtColor(this->img(roi), mat, cv::COLOR_BGR2GRAY);
 
-		if (this->edgeCal == nullptr)
+		if (!this->edgeCal)
 		{
-			this->edgeCal = new EdgeCalSilk(mat.rows, 4, 3);
+			this->edgeCal = std::make_unique<EdgeCalSilk>(mat.rows, 4, 3);
 		}
 
 		int starty1 = mat.rows / 2;

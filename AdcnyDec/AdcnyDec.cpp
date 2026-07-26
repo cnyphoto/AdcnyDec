@@ -3,12 +3,12 @@
 
 int main(int argc, char* argv[])
 {
-	DbToCode* dtcode = new DbToCode();
-	dtcode->setConstr("127.0.0.1", 3306, "root", "daitto", "surface");
+	DbToCode dtcode;
+	dtcode.setConstr("127.0.0.1", 3306, "root", "daitto", "surface");
 
-	SorcePar spar = dtcode->getPar(1);
+	SorcePar spar = dtcode.getPar(1);
 
-	std::vector<modpar> mods = dtcode->getMod(spar.id);
+	std::vector<modpar> mods = dtcode.getMod(spar.id);
 
 	for (auto it = mods.begin(); it != mods.end(); ++it) {
 		it->trained = spar.trained;
@@ -16,7 +16,7 @@ int main(int argc, char* argv[])
 
 	spar.mods.push_back(mods[0]);
 
-	Operation Operation(*dtcode, spar);
+	Operation Operation(dtcode, spar);
 
 	Operation.star(argc > 1, argc, argv);
 

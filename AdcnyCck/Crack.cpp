@@ -5,15 +5,9 @@
 
 #include <numeric>
 
-Crack::Crack()
-{
-	this->edgeCal = nullptr;
-}
+Crack::Crack() = default;
 
-Crack::~Crack()
-{
-
-}
+Crack::~Crack() = default;
 
 std::vector<int> changeZqImg(cv::Mat& src) {
 
@@ -87,9 +81,9 @@ std::vector<std::vector<int>> Crack::getBboxs(int num)
 	cv::Mat imga=this->img;
 
 
-	if (this->edgeCal == nullptr)
+	if (!this->edgeCal)
 	{
-		this->edgeCal = new EdgeCal(this->img.rows, 4, 3);
+		this->edgeCal = std::make_unique<EdgeCal>(this->img.rows, 4, 3);
 	}
 
 	int starty1 = this->img.rows / 3;

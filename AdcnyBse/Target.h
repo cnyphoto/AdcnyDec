@@ -47,4 +47,5 @@ class __declspec(dllexport) Target
 {
 public:
 	virtual void requestPhoto(const SorcePar& spar, std::function<void(cv::Mat, int)> f) = 0;
+	virtual ~Target() = default;
 };

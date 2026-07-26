@@ -6,6 +6,7 @@
 #define ADCNYMVS_API __declspec(dllimport)
 #endif
 
+#include <memory>
 #include <CameraApt.h>
 #include "MvsStore.h"
 
@@ -16,6 +17,6 @@ public:
 	void stop();
 	bool exied;
 private:
-	MvsStore* mvs;
+	std::unique_ptr<MvsStore> mvs;
 };
 

@@ -4,7 +4,7 @@
 
 void BslWare::specificRequest(const SorcePar& spar, std::function<void(cv::Mat, int)> f)
 {
-    this->Bsl = new BslStore();
+    this->Bsl = std::make_unique<BslStore>();
     Bsl->drivesNum = spar.scoilid - 1;
     Bsl->run(f);
 }

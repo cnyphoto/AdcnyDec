@@ -5,16 +5,9 @@
 
 #include <numeric>
 
-EdgeSin::EdgeSin()
-{
-	this->edgeCa = nullptr;
-}
+EdgeSin::EdgeSin() = default;
 
-EdgeSin::~EdgeSin()
-{
-	delete this->edgeCa;    // ← 在这里补上
-	this->edgeCa = nullptr; // ←
-}
+EdgeSin::~EdgeSin() = default;
 
 std::vector<std::vector<int>> EdgeSin::getBboxs(int num)
 {
@@ -26,9 +19,9 @@ std::vector<std::vector<int>> EdgeSin::getBboxs(int num)
 	cv::Mat imga = this->img;
 
 
-	if (this->edgeCa == nullptr)
+	if (!this->edgeCa)
 	{
-		this->edgeCa = new EdgeCa(this->img.rows, 4, 3);
+		this->edgeCa = std::make_unique<EdgeCa>(this->img.rows, 4, 3);
 	}
 
 	int starty1 = this->img.rows / 3;

@@ -4,7 +4,7 @@
 
 void MvsWare::specificRequest(const SorcePar& spar, std::function<void(cv::Mat, int)> f)
 {
-    mvs=new MvsStore(spar.scoilid - 1);
+    mvs = std::make_unique<MvsStore>(spar.scoilid - 1);
     //mvs->drivesNum = spar.scoilid-1;
 	mvs->camId = spar.CamId;
     mvs->run(f);

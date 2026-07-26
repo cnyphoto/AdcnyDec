@@ -4,6 +4,7 @@
 #include <opencv2/opencv.hpp>
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/highgui.hpp>
+#include <memory>
 #include <vector>
 #include <ImgCal.h>
 #include <EdgeCal.h>
@@ -25,5 +26,5 @@ public:
 
 	std::vector<std::vector<int>> getBboxs(int num);
 private:
-	EdgeCal* edgeCal;
+	std::unique_ptr<EdgeCal> edgeCal;
 };
