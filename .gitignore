@@ -1,0 +1,44 @@
+## 临时文件
+*.log
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+## Visual Studio
+## 编译输出
+x64/
+Debug/
+Release/
+*.obj
+*.exe
+*.dll
+*.lib
+*.exp
+*.pdb
+*.ilk
+*.ipdb
+*.iobj
+*.tlog/
+*.lastbuildstate
+*.unsuccessfulbuild
+*.log
+
+## VS 用户设置
+*.user
+*.suo
+*.sdf
+*.opensdf
+*.vcxproj.filters
+.vs/
+
+## OpenCV 本地配置
+Opencv455.props
+opencv455Release.props
+
+## vcpkg
+vcpkg_installed/
+
+## 其他
+*.pch
