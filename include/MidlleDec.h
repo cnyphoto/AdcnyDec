@@ -1,9 +1,6 @@
 #pragma once
 #include <ImgCal.h>
 
-using namespace std;
-using namespace cv;
-
 
 #ifdef ADCNYMID_EXPORTS
 #define ADCNYMID_API __declspec(dllexport)

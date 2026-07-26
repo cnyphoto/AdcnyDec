@@ -1,8 +1,6 @@
 #pragma once
 #include <vector>
 #include <string>
-#include <queue>
-#include <InferStore.h>
 #include <Target.h>
 
 
@@ -33,10 +31,7 @@ public:
 	void toUpDataImgNum(const int& n, const long long& colid);
 	long long combCoilData(bool upCoilum, int arc, char* argv[]);
 	void comCalData(std::vector<std::vector<int>> bboxs, int n);
-	void startInfer(std::vector<modpar> mods,std::string flord);
-	void imgInferToDb(std::vector<std::string> sqls) const;
-	void toInfer(const cv::Mat img, std::vector<std::vector<int>> bbox, long long coild, int modtype, int imgNum, int saveType);
-	void setExit(int num, long long coild) const;
+	const std::string& getDecInsertSqlTemplate() const { return sqlStrBses[1]; }
 
 private:
 	ConStr constr;
@@ -44,7 +39,4 @@ private:
 		"insert into `dec`(imgdecid,area,leftt,top,width,height,imgid,edge,decid,coilid,scoilid) values(%d,%d,%d,%d,%d,%d,%d,%d,%d,%lld,%d)",
 	"UPDATE edgecal SET imgid=%d,colorval=%d,edge=%d WHERE id=%d",
 	"UPDATE coilstore SET EndImgId = %d WHERE CoilNum = %lld" };
-	InferStore* inferstore;
-	std::mutex mtx;
 };
-

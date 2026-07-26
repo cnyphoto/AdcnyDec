@@ -15,7 +15,12 @@ Operation::Operation(DbToCode &dt, const SorcePar &spar)
 	target = std::make_unique<DecAdapter>(cameraApt.get());
 	this->dtcode = &dt;
 	pool = std::make_unique<AccLibary>(this->spar.ascNum * 3);
-	wsoc = std::make_unique<Wsoc>(dt, 0, 0, *cameraApt, 0);
+	wsoc = std::make_unique<Wsoc>(0, 0, 0);
+	wsoc->setOnExitCallback([this](int n, long long coilnum) {
+		this->dtcode->toUpDataImgNum(n, coilnum);
+		this->cameraApt->stop();
+	});
+	inferstore = std::make_unique<InferStore>();
 }
 
 Operation::~Operation() {}
@@ -44,7 +49,7 @@ void Operation::star(bool c, int a, char *v[])
 		img->imgop = std::make_unique<imgOp>(spar.savePath);
 		ccklist.emplace_back(std::move(img));
 	}
-	target->requestPhoto(spar, [this](Mat d, int b)
+	target->requestPhoto(spar, [this](cv::Mat d, int b)
 						 { this->disOutImg(b, d); });
 }
 
@@ -73,7 +78,10 @@ void Operation::runDetection(int n) const
 			cv::Mat m;
 			ic->img.copyTo(m);
 			m(r).setTo(cv::Scalar(0));
-			dtcode->toInfer(m, decs, coild, spar.scoilid, n, 0);
+			{
+				std::lock_guard<std::mutex> lock(inferMtx);
+				inferstore->infer(m, decs, coild, spar.scoilid, n, 0);
+			}
 		}
 		else
 			dtcode->combDecData(decs, coild, spar.scoilid);
@@ -83,7 +91,10 @@ void Operation::runDetection(int n) const
 	{
 		cv::Mat m;
 		ic->img.copyTo(m);
-		dtcode->toInfer(m, decs, coild, spar.scoilid, n, spar.Acquisition);
+		{
+			std::lock_guard<std::mutex> lock(inferMtx);
+			inferstore->infer(m, decs, coild, spar.scoilid, n, spar.Acquisition);
+		}
 	}
 	if (spar.Acquisition < 1 && decs.size() < 3)
 		ic->imgop->saveImg(n, ic->img, coild, spar.scoilid, 0);
@@ -94,9 +105,17 @@ void Operation::runCom(int n) const { wsoc->runSoc(std::to_string(spar.scoilid),
 void Operation::runinfer() const
 {
 	if (spar.openAied)
-		dtcode->startInfer(spar.mods, spar.Acquisition > 1 ? spar.savePath : "");
+	{
+		inferstore->setMods(spar.mods, spar.Acquisition > 1 ? spar.savePath : "");
+		inferstore->setStart(true);
+		inferstore->inferForeverToStr(dtcode->getDecInsertSqlTemplate().c_str(),
+			[this](std::vector<std::string> sqls) {
+				for (auto& sql : sqls)
+					this->dtcode->insetData(sql);
+			});
+	}
 }
-void Operation::disOutImg(int r, const Mat d) const
+void Operation::disOutImg(int r, const cv::Mat d) const
 {
 	pool->enqueue([this, r, d]() -> int
 				  {

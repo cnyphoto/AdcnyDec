@@ -36,7 +36,7 @@ public:
 	void startInfer(std::vector<modpar> mods,std::string flord);
 	void imgInferToDb(std::vector<std::string> sqls) const;
 	void toInfer(const cv::Mat img, std::vector<std::vector<int>> bbox, long long coild, int modtype, int imgNum, int saveType);
-	void setExit(int num, long long coild) const;
+	const std::string& getDecInsertSqlTemplate() const { return sqlStrBses[1]; }
 
 private:
 	ConStr constr;

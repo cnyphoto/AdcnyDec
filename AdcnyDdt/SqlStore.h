@@ -13,23 +13,23 @@ public:
 		const std::string& user,
 		const std::string& pwd,
 		const std::string& dbName);
-	// ¸üĞÂ²Ù×÷ insert¡¢delete¡¢update
+	// æ›´æ–°æ“ä½œ insertã€deleteã€update
 	bool update(const std::string& sql);
-	// ²éÑ¯²Ù×÷ select
+	// æŸ¥è¯¢æ“ä½œ select
 	MYSQL_RES* query(const std::string& sql);
-	//Ë¢ĞÂ´æ»îÊ±¼ä
+	//åˆ·æ–°å­˜æ´»æ—¶é—´
 	void refreshAliveTime()
 	{
 		aliveTime = std::chrono::steady_clock::now();
 	}
-	//»ñÈ¡´æ»îÊ±¼ä¼ä¸ô
+	//è·å–å­˜æ´»æ—¶é—´é—´éš”
 	size_t getAliveTime()
 	{
 		return std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::steady_clock::now() - aliveTime).count();
 	}
 private:
-	MYSQL* conn;//Êı¾İ¿âÁ¬½Ó
-	std::chrono::time_point<std::chrono::steady_clock> aliveTime; //Á¬½Ó´æ»îÊ±¼ä
+	MYSQL* conn;//æ•°æ®åº“è¿æ¥
+	std::chrono::time_point<std::chrono::steady_clock> aliveTime; //è¿æ¥å­˜æ´»æ—¶é—´
 };
 
 

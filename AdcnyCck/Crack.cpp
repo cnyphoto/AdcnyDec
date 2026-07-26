@@ -25,8 +25,8 @@ std::vector<int> changeZqImg(cv::Mat& src) {
 
 		for (int j = src.cols - 2; j >= 0; j--) {
 
-			int xa = abs(src_row_ptr[j] - src_row_ptr[j + 1]);
-			auto vc = static_cast<double>(abs(xa)) / src_row_ptr[j + 1];
+			int xa = std::abs(src_row_ptr[j] - src_row_ptr[j + 1]);
+			auto vc = static_cast<double>(std::abs(xa)) / src_row_ptr[j + 1];
 			if (vc > 0.30)
 			{
 				listforRow.push_back(j);

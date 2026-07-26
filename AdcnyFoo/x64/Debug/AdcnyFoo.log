@@ -1,8 +1,0 @@
-﻿  pch.cpp
-  dllmain.cpp
-  FolderWare.cpp
-  正在生成代码...
-    正在创建库 ..\x64\Debug\AdcnyFoo.lib 和对象 ..\x64\Debug\AdcnyFoo.exp
-  AdcnyFoo.vcxproj -> D:\sgfs\Adcnydec\x64\Debug\AdcnyFoo.dll
-  'pwsh.exe' 不是内部或外部命令，也不是可运行的程序
-  或批处理文件。

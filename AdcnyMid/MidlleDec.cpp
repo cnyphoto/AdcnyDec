@@ -14,8 +14,8 @@ MidlleDec::~MidlleDec()
 int MidlleDec::imgValid(cv::Mat mat)
 {
 	//int c = 0;
-	Rect r(imgW * 0.48, 0, 96, 20);
-	Mat imga1 = mat(r);
+	cv::Rect r(imgW * 0.48, 0, 96, 20);
+	cv::Mat imga1 = mat(r);
 	cv::Scalar sumScalar = cv::mean(imga1);
 	//std::cout << "-=-=-=-=: " << sumScalar.val[0] << std::endl;
 	return static_cast<int>(sumScalar.val[0] * 100);
@@ -84,7 +84,7 @@ std::vector<std::vector<int>> MidlleDec::getBboxs(int num)
 		if (this->img.step == 3)
 		{
 			cv::Mat imgs[3];
-			split(mat, imgs);
+			cv::split(mat, imgs);
 
 			for (size_t i = 0; i < 3; i++)
 			{
@@ -125,7 +125,7 @@ std::vector<std::vector<int>> MidlleDec::getBboxs(int num)
 	cv::Mat dst = mat3;
 	cv::Mat labels, stats, centroids, stats1;
 	int n = cv::connectedComponentsWithStats(dst, labels, stats, centroids, 8, CV_32S);
-	//std::cout << "-------------n£º" << n << "---------------" << std::endl;
+	//std::cout << "-------------nï¿½ï¿½" << n << "---------------" << std::endl;
 
 	for (int i = 0; i < n; i++)
 	{
@@ -161,6 +161,6 @@ std::vector<std::vector<int>> MidlleDec::getBboxs(int num)
 	}
 
 
-	std::cout << "-------------defect£º" << bboxs.size() - 2 << "---------------" << std::endl;
+	std::cout << "-------------defectï¿½ï¿½" << bboxs.size() - 2 << "---------------" << std::endl;
 	return bboxs;
 }

@@ -12,8 +12,8 @@ EdgeSin::EdgeSin()
 
 EdgeSin::~EdgeSin()
 {
-	delete this->edgeCa;    // ¡û ÔÚÕâÀï²¹ÉÏ
-	this->edgeCa = nullptr; // ¡û
+	delete this->edgeCa;    // â† åœ¨è¿™é‡Œè¡¥ä¸Š
+	this->edgeCa = nullptr; // â†
 }
 
 std::vector<std::vector<int>> EdgeSin::getBboxs(int num)

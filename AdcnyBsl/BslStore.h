@@ -24,9 +24,6 @@ using namespace Pylon;
 // Namespace for using pylon universal instant camera parameters.
 using namespace Basler_UniversalCameraParams;
 
-// Namespace for using cout.
-using namespace std;
-
 
 class BslStore
 {

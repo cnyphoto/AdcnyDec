@@ -27,7 +27,7 @@ void BslStore::run(std::function<void(cv::Mat, int)> f)
         CBaslerUniversalInstantCamera camera(CTlFactory::GetInstance().CreateFirstDevice());
 
         // Print the model name of the camera.
-        cout << "Using device: " << camera.GetDeviceInfo().GetModelName() << endl << endl;
+        std::cout << "Using device: " << camera.GetDeviceInfo().GetModelName() << std::endl << std::endl;
 
         // Register an image event handler that accesses the chunk data.
         //camera.RegisterImageEventHandler(new CSampleImageEventHandler, RegistrationMode_Append, Cleanup_Delete);
@@ -91,7 +91,7 @@ void BslStore::run(std::function<void(cv::Mat, int)> f)
             // Wait for an image and then retrieve it. A timeout of 5000 ms is used.
             // RetrieveResult calls the image event handler's OnImageGrabbed method.
             camera.RetrieveResult(5000, ptrGrabResult, TimeoutHandling_ThrowException);
-            cout << "GrabSucceeded: " << ptrGrabResult->GrabSucceeded() << endl;
+            std::cout << "GrabSucceeded: " << ptrGrabResult->GrabSucceeded() << std::endl;
 
             // Image grabbed successfully?
             if (ptrGrabResult->GrabSucceeded())
@@ -146,7 +146,7 @@ void BslStore::run(std::function<void(cv::Mat, int)> f)
             }
             else
             {
-                cout << "Error: " << std::hex << ptrGrabResult->GetErrorCode() << std::dec << " " << ptrGrabResult->GetErrorDescription() << endl;
+                std::cout << "Error: " << std::hex << ptrGrabResult->GetErrorCode() << std::dec << " " << ptrGrabResult->GetErrorDescription() << std::endl;
             }
         }
 

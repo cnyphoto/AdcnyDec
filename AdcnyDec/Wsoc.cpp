@@ -1,27 +1,34 @@
 ﻿#include "Wsoc.h"
+#include <iostream>
+#include <thread>
+#include <stdio.h>
+#include "easywsclient.h"
 
-Wsoc::Wsoc(DbToCode& dt,long long coilnum,int n, CameraApt& ca,int boundary)
+Wsoc::Wsoc(long long coilnum, int n, int boundary)
 {
-    this->dtcode = &dt;
     this->coilnum = coilnum;
     this->n = n;
-    this->ca = &ca;
-this->boundary = boundary;
+    this->boundary = boundary;
 }
 
 Wsoc::~Wsoc()
 {
-requestStop();
+    requestStop();
 }
 
 void Wsoc::requestStop()
 {
-stopRequested.store(true);
+    stopRequested.store(true);
+}
+
+void Wsoc::setOnExitCallback(std::function<void(int n, long long coilnum)> callback)
+{
+    onExitCallback = std::move(callback);
 }
 
 int Wsoc::runSoc(std::string modetype, std::string webSockectIpPort)
 {
-   using easywsclient::WebSocket;
+    using easywsclient::WebSocket;
 #ifdef _WIN32
     INT rc;
     WSADATA wsaData;
@@ -57,8 +64,8 @@ int Wsoc::runSoc(std::string modetype, std::string webSockectIpPort)
 
         if (msg == "5-exit")
         {
-            dtcode->setExit(this->n, this->coilnum);
-            ca->stop();
+            if (onExitCallback)
+                onExitCallback(this->n, this->coilnum);
             ws->close();
         }
 
@@ -73,8 +80,6 @@ int Wsoc::runSoc(std::string modetype, std::string webSockectIpPort)
 
     delete ws;
     ws = nullptr;
-
-    // 注意：不删除 ca——CameraApt 的所有权在 Operation，由 unique_ptr 管理
 
 #ifdef _WIN32
     printf(">>> %s\n", "关闭socket");

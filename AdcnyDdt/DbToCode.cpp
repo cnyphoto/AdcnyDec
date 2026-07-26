@@ -5,7 +5,6 @@
 
 DbToCode::DbToCode()
 {
-	this->inferstore = new InferStore();
 }
 
 DbToCode::~DbToCode()
@@ -97,7 +96,7 @@ void DbToCode::insetData(std::string sql) const
 
 	SqlStore* conn=new SqlStore();
 
-	// 1. Á¬½ÓÊý¾Ý¿â£¨ÅÐ¶ÏÊÇ·ñ³É¹¦£©
+	// 1. è¿žæŽ¥æ•°æ®åº“ï¼ˆåˆ¤æ–­æ˜¯å¦æˆåŠŸï¼‰
 	bool isConnect = conn->connect(
 		this->constr.sqlip,
 		this->constr.port,
@@ -108,25 +107,25 @@ void DbToCode::insetData(std::string sql) const
 
 	if (!isConnect)
 	{
-		std::cerr << "Êý¾Ý¿âÁ¬½ÓÊ§°Ü£¡" << std::endl;
+		std::cerr << "DB connect failed!" << std::endl;
 		return;
 	}
 
 	try
 	{
-		// 2. Ö´ÐÐ SQL£¨insert/update/delete Í¨ÓÃ£©
+		// 2. æ‰§è¡Œ SQLï¼ˆinsert/update/delete é€šç”¨ï¼‰
 		bool ret = conn->update(sql);
 		if (!ret)
 		{
-			std::cerr << "SQL Ö´ÐÐÊ§°Ü£º" << sql << std::endl;
+			std::cerr << "SQL exec failed: " << sql << std::endl;
 		}
 	}
 	catch (...)
 	{
-		std::cerr << "Ö´ÐÐ SQL Òì³££¡" << std::endl;
+		std::cerr << "SQL exec exception!" << std::endl;
 	}
 
-	// 3. ±ØÐë¹Ø±ÕÁ¬½Ó£¨·ÀÖ¹Á¬½ÓÐ¹Â©£©
+	// 3. close connection to prevent leak
 	delete conn;
 	conn = nullptr;	
 }
@@ -177,30 +176,6 @@ void DbToCode::comCalData(std::vector<std::vector<int>> bboxs,int n)
 	this->insetData(sql);
 }
 
-void DbToCode::startInfer(std::vector<modpar> mods, std::string flord)
-{
-	this->inferstore->setMods(mods, flord);
-	this->inferstore->setStart(true);
-	this->inferstore->inferForeverToStr(sqlStrBses.at(1).c_str(), [this](std::vector<std::string> sqls) {this->imgInferToDb(sqls);});
-}
 
-void DbToCode::imgInferToDb(std::vector<std::string> sqls) const
-{
-	for (size_t i = 0; i < sqls.size(); i++)
-	{
-		this->insetData(sqls[i]);
-	}
-}
 
-void DbToCode::toInfer(const cv::Mat img, std::vector<std::vector<int>> bbox,long long coild,int modtype, int imgNum, int saveType)
-{
-	std::lock_guard<std::mutex> lock(mtx);
-	this->inferstore->infer(img, bbox, coild, modtype,imgNum, saveType);
-}
 
-void DbToCode::setExit(int num, long long coild) const
-{
-	char sql[1024] = { 0 };
-	sprintf_s(sql, this->sqlStrBses[3].c_str(), num, coild);
-	this->insetData(sql);
-}

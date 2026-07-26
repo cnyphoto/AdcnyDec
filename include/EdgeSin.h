@@ -8,9 +8,6 @@
 #include <ImgCal.h>
 #include <EdgeCa.h>
 
-using namespace std;
-using namespace cv;
-
 
 #ifdef ADNCYEDG_EXPORTS
 #define ADNCYEDG_API __declspec(dllexport)

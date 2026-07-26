@@ -39,19 +39,19 @@ cv::Mat EdgeCa::getdiffNewRow(cv::Mat img, int n, int amplify)
 	{
 		cv::Mat diffRowxx;
 		cv::Rect roi(x, 0, 1, img.rows);
-		// ��ȡ��ǰ�к���һ�е�����
+		// 提取当前行和上一行的像素
 		cv::Mat prevcol = img.col(x * n - n);
 		cv::Mat currcol = img.col(x * n);
 
-		// �������еĲ�ֵ
+		// 计算两行的差值
 		cv::absdiff(prevcol, currcol, diffRowxx);
 		diffRowxx = diffRowxx * amplify;
 
-		// ������������������Ҫ���еĴ���������ͳ�Ʒ������صĸ�����
-		// ����ͳ�Ʒ������صĸ���
+		// 可以在这里添加你想要进行的处理，例如统计非零像素的个数等
+		// 例如统计非零像素的个数
 		// int nonZeroCount = cv::countNonZero(diffRow);
 
-		// �����ֵͼƬ
+		// 输出差值图片
 		//cv::convertScaleAbs(diffRowxx, diffRowxx, 1 / 256.0);
 		diffRowxx.copyTo(diffRow(roi));
 	}
