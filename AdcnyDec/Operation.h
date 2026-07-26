@@ -22,8 +22,6 @@ public:
     void runinfer() const;
 
 private:
-    void loadSoftConfig();
-
     std::unique_ptr<AccLibary> pool;
     std::unique_ptr<Wsoc> wsoc;
     std::vector<std::unique_ptr<ImgCal>> ccklist;
@@ -35,10 +33,6 @@ private:
     SorcePar spar;
     float edgeInt;
     int startNum;
-    std::string cameraType;
-    std::string detectorType;
-    bool saveDb;
-    bool sendAlert;
     mutable std::mutex inferMtx;
 };
 

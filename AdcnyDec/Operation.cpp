@@ -10,11 +10,10 @@ Operation::Operation(DbToCode &dt, const SorcePar &spar)
 	this->spar = spar;
 	coild = 0;
 	this->startNum = 0;
-	loadSoftConfig();
-	if (spar.tested)
-		cameraApt = createCamera(cameraType);
-	target = std::make_unique<DecAdapter>(cameraApt.get());
 	this->dtcode = &dt;
+	if (spar.tested)
+		cameraApt = createCamera(this->dtcode->getSoftCfg().cameraType);
+	target = std::make_unique<DecAdapter>(cameraApt.get());
 	pool = std::make_unique<AccLibary>(this->spar.ascNum * 3);
 	wsoc = std::make_unique<Wsoc>(0, 0, 0);
 	wsoc->setOnExitCallback([this](int n, long long coilnum) {
@@ -44,7 +43,7 @@ void Operation::star(bool c, int a, char *v[])
 
 	for (size_t i = 0; i < this->spar.ascNum; i++)
 	{
-		auto img = createDetector(detectorType);
+		auto img = createDetector(this->dtcode->getSoftCfg().detectorType);
 		img->imgW = spar.imgW;
 		img->imgH = spar.imgH;
 		img->colorNum = spar.colorNum;
@@ -122,31 +121,14 @@ void Operation::runinfer() const
 		inferstore->inferForeverToStr(
 			[this](std::vector<std::string> sqls) {
 				for (auto& valStr : sqls) {
-					if (this->saveDb)
+					if (this->dtcode->getSoftCfg().saveDb)
 						this->dtcode->combDecValStr(valStr);
-					if (this->sendAlert)
+					if (this->dtcode->getSoftCfg().sendAlert)
 						this->wsoc->sendMessage(valStr);
 					std::cout << valStr<<"==============================================================" << std::endl;
 				}
 			});
 	}
-}
-
-void Operation::loadSoftConfig()
-{
-	imgOp tmpOp("");
-	auto cfg = tmpOp.readCalINIStr("soft.ini");
-
-	cameraType = cfg["Camera_type"];
-	if (cameraType.empty())
-		cameraType = "folder";
-
-	detectorType = cfg["Detector_type"];
-	if (detectorType.empty())
-		detectorType = "edgesin";
-
-	saveDb = cfg["Database_saveDb"] == "1";
-	sendAlert = cfg["Alert_sendAlert"] == "1";
 }
 
 

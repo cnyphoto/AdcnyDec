@@ -4,7 +4,6 @@
 int main(int argc, char* argv[])
 {
 	DbToCode dtcode;
-	dtcode.setConstr("127.0.0.1", 3306, "root", "daitto", "surface");
 
 	SorcePar spar = dtcode.getPar(1);
 

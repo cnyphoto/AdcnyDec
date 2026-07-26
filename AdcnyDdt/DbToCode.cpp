@@ -2,10 +2,13 @@
 #include "DbToCode.h"
 #include "SqlStore.h"
 #include <iostream>
+#include <fstream>
+#include <sstream>
 
 DbToCode::DbToCode()
 	: dbConn(nullptr)
 {
+	loadFromIni();
 }
 
 DbToCode::~DbToCode()
@@ -13,6 +16,50 @@ DbToCode::~DbToCode()
 	if (dbConn) {
 		delete dbConn;
 		dbConn = nullptr;
+	}
+}
+
+void DbToCode::loadFromIni(const std::string& iniPath)
+{
+	std::ifstream file(iniPath);
+	if (!file.is_open()) {
+		std::cerr << "DbToCode: 无法打开 " << iniPath << std::endl;
+		return;
+	}
+
+	std::string line, section;
+	while (std::getline(file, line)) {
+		if (line.empty() || line[0] == ';' || line[0] == '#')
+			continue;
+		if (line[0] == '[') {
+			section = line.substr(1, line.find(']') - 1);
+			continue;
+		}
+
+		std::string key, value;
+		std::stringstream ss(line);
+		std::getline(ss, key, '=');
+		std::getline(ss, value);
+
+		if (section == "DbConnection") {
+			if (key == "ip")       this->constr.sqlip  = value;
+			if (key == "port")     this->constr.port   = std::stoi(value);
+			if (key == "user")     this->constr.user   = value;
+			if (key == "password") this->constr.psd    = value;
+			if (key == "dbName")   this->constr.dbName = value;
+		}
+		else if (section == "Camera") {
+			if (key == "type")     this->softCfg.cameraType = value;
+		}
+		else if (section == "Detector") {
+			if (key == "type")     this->softCfg.detectorType = value;
+		}
+		else if (section == "Database") {
+			if (key == "saveDb")   this->softCfg.saveDb = (value == "1");
+		}
+		else if (section == "Alert") {
+			if (key == "sendAlert") this->softCfg.sendAlert = (value == "1");
+		}
 	}
 }
 

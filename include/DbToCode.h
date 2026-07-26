@@ -27,6 +27,7 @@ public:
 		std::string dbName;
 	}ConStr;
 	void setConstr(std::string sqlip, int port, std::string user, std::string psd, std::string dbName);
+	void loadFromIni(const std::string& iniPath = "soft.ini");
 	SorcePar getPar(int scoild) const;
 	std::vector<modpar> getMod(int sparid) const;
 	void insetData(const std::string sql) const;
@@ -37,8 +38,20 @@ public:
 	void comCalData(std::vector<std::vector<int>> bboxs, int n);
 	const std::string& getDecInsertSqlTemplate() const { return sqlStrBses[1]; }
 
+	// 软件配置（来自 soft.ini）
+	struct SoftCfg {
+		std::string cameraType   = "folder";
+		std::string detectorType = "edgesin";
+		bool saveDb    = false;
+		bool sendAlert = false;
+	};
+	const SoftCfg& getSoftCfg() const { return softCfg; }
+
+	const ConStr& getConStr() const { return constr; }
+
 private:
 	ConStr constr;
+	SoftCfg softCfg;
 	const std::vector<std::string> sqlStrBses{ "insert into `coilstore`(CoilNum,CoilWidth,CoilThickness) values(%lld,%s,%s)",
 		"insert into `dec`(imgdecid,area,leftt,top,width,height,imgid,edge,decid,coilid,scoilid) values(%d,%d,%d,%d,%d,%d,%d,%d,%d,%lld,%d)",
 	"UPDATE edgecal SET imgid=%d,colorval=%d,edge=%d WHERE id=%d",
