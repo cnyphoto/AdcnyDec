@@ -18,7 +18,7 @@
                 "${workspaceFolder}/AdcnyVdo",
                 "${workspaceFolder}/AdcnyVds",
                 "${workspaceFolder}/AdcnyYoo",
-                "${workspaceFolder}/AdncyEdg",
+                "${workspaceFolder}/AdcnyEdg",
                 "C:/opencv/build/include",
                 "C:/opencv/build/include/opencv2",
                 "D:/mysql/include",
@@ -49,7 +49,7 @@
                 "ADCNYVDO_EXPORTS",
                 "ADCNYVDS_EXPORTS",
                 "ADCNYYOO_EXPORTS",
-                "ADNCYEDG_EXPORTS"
+                "ADCNYEDG_EXPORTS"
             ],
             "compilerPath": "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/cl.exe",
             "cStandard": "c17",
@@ -73,7 +73,7 @@
                     "${workspaceFolder}/AdcnyVdo",
                     "${workspaceFolder}/AdcnyVds",
                     "${workspaceFolder}/AdcnyYoo",
-                    "${workspaceFolder}/AdncyEdg"
+                    "${workspaceFolder}/AdcnyEdg"
                 ],
                 "limitSymbolsToIncludedHeaders": true
             }

@@ -1,183 +1,127 @@
-#pragma once
+#include "Operation.h"
+#include "Factory.h"
+#include <memory>
+#include <DecAdapter.h>
+#include <ImgCal.h>
 
-#include <NvInfer.h>
-#include <cuda_runtime.h>
-#include <opencv2/opencv.hpp>
-#include <opencv2/imgproc.hpp>
-#include <opencv2/highgui.hpp>
-#include <CompareContours.h>
-
-
-#ifdef ADCNYYOO_EXPORTS
-#define ADCNYYOO_API __declspec(dllexport)
-#else
-#define ADCNYYOO_API __declspec(dllimport)
-#endif
-
-class __declspec(dllexport) YoloTrt
+Operation::Operation(DbToCode &dt, const SorcePar &spar)
 {
-public:
-    YoloTrt();
-    ~YoloTrt();
+	this->edgeInt = 0.0f;
+	this->spar = spar;
+	coild = 0;
+	this->startNum = 0;
+	if (spar.tested)
+		cameraApt = createCamera("folder");
+	target = std::make_unique<DecAdapter>(cameraApt.get());
+	this->dtcode = &dt;
+	pool = std::make_unique<AccLibary>(this->spar.ascNum * 3);
+	wsoc = std::make_unique<Wsoc>(0, 0, 0);
+	wsoc->setOnExitCallback([this](int n, long long coilnum) {
+		this->dtcode->toUpDataImgNum(n, coilnum);
+		this->cameraApt->stop();
+	});
+	inferstore = std::make_unique<InferStore>();
+}
 
-    float letterbox(
-        const cv::Mat& image,
-        cv::Mat& out_image,
-        const cv::Size& new_shape = cv::Size(640, 640),
-        int stride = 32,
-        const cv::Scalar& color = cv::Scalar(114, 114, 114),
-        bool fixed_shape = false,
-        bool scale_up = true);
+Operation::~Operation() {}
 
-    float* blobFromImagetofloat(cv::Mat& img)
-    {
-        float* blob = new float[img.total() * 3];
-        int channels = 3;
-        int img_h = img.rows;
-        int img_w = img.cols;
-        for (size_t c = 0; c < channels; c++)
-        {
-            for (size_t h = 0; h < img_h; h++)
-            {
-                for (size_t w = 0; w < img_w; w++)
-                {
-                    blob[c * img_w * img_h + h * img_w + w] = (float)img.at<cv::Vec3b>(h, w)[c] / 255.0;
-                }
-            }
-        }
-        return blob;
-    }
+void Operation::star(bool c, int a, char *v[])
+{
+	if (a > 4)
+		this->startNum = atoi(v[4]);
+	coild = dtcode->combCoilData(c, a, v);
+	wsoc->setCoil(coild);
+	int re = 0;
+	pool->enqueue([this, re]() -> int
+				  {this->runinfer();return 0; });
+	pool->enqueue([this, re]() -> int
+				  {this->runCom(re);return 0; });
+	for (size_t i = 0; i < this->spar.ascNum; i++)
+	{
+		auto img = createDetector("edgesin");
+		img->imgW = spar.imgW;
+		img->imgH = spar.imgH;
+		img->colorNum = spar.colorNum;
+		img->scoilid = spar.scoilid;
+		img->du = spar.du;
+		img->rl = spar.rl;
+		img->coilnum = coild;
+		img->imgop = std::make_unique<imgOp>(spar.savePath);
+		ccklist.emplace_back(std::move(img));
+	}
+	target->requestPhoto(spar, [this](cv::Mat d, int b)
+						 { this->disOutImg(b, d); });
+}
 
-    cv::Rect scale_boxes(cv::Mat& img, float bbox[4]) const {
-
-        float l, r, t, b;
-
-        float r_w = iW / (img.cols * 1.f);
-        float r_h = iH / (img.rows * 1.f);
-        float xx = 0.f;
-        float yy = 0.f;
-        float ratio;
-
-        if (r_h > r_w)
-        {
-            yy = iW - r_w * img.rows;
-            ratio = r_w;
-        }
-        else {
-            xx = iH - r_h * img.cols;
-            ratio = r_h;
-
-        }
-        l = bbox[0] - bbox[2] * 0.5 - xx * 0.5;
-        r = bbox[0] + bbox[2] * 0.5 - xx * 0.5;
-        t = bbox[1] - bbox[3] * 0.5 - yy * 0.5;
-        b = bbox[1] + bbox[3] * 0.5 - yy * 0.5;
-        l = round(l / ratio);
-        r = round(r / ratio);
-        t = round(t / ratio);
-        b = round(b / ratio);
-
-        int rl = r - l > img.cols ? img.cols : r - l;
-        int bt = b - t > img.rows ? img.rows : b - t;
-
-        return cv::Rect(l<0?0:l, t<0?0:t, rl, bt);
-    }
-
-    float iou(float lbox[4], float rbox[4]) {
-        float interBox[] = {
-            (std::max)(lbox[0] - lbox[2] / 2.f , rbox[0] - rbox[2] / 2.f), //left
-            (std::min)(lbox[0] + lbox[2] / 2.f , rbox[0] + rbox[2] / 2.f), //right
-            (std::max)(lbox[1] - lbox[3] / 2.f , rbox[1] - rbox[3] / 2.f), //top
-            (std::min)(lbox[1] + lbox[3] / 2.f , rbox[1] + rbox[3] / 2.f), //bottom
-        };
-
-        if (interBox[2] > interBox[3] || interBox[0] > interBox[1])
-            return 0.0f;
-
-        float interBoxS = (interBox[1] - interBox[0]) * (interBox[3] - interBox[2]);
-        return interBoxS / (lbox[2] * lbox[3] + rbox[2] * rbox[3] - interBoxS);
-    }
-
-    int getClassId(float* output, int start, int num) {
-        int maxint = 0;
-        float d = 0;
-        for (size_t i = 0; i < num; i++)
-        {
-            //std::cout << d << std::endl;
-            if (output[start + i] > d)
-            {
-                d = output[start + i];
-                maxint = i;
-            }
-        }
-        return maxint;
-    }
-
-    void nmsforiou(std::vector<Detection>& res, std::map<float, std::vector<Detection>> ma, float nms_thresh = 0.5) {
-        for (auto it = ma.begin(); it != ma.end(); it++) {
-            auto& dets = it->second;
-            std::sort(dets.begin(), dets.end(), CompareContours());
-            for (size_t m = 0; m < dets.size(); ++m) {
-                auto& item = dets[m];
-                res.push_back(item);
-                for (size_t n = m + 1; n < dets.size(); ++n) {
-                    if (iou(item.bbox, dets[n].bbox) > nms_thresh) {
-                        dets.erase(dets.begin() + n);
-                        --n;
-                    }
-                }
-            }
-        }
-    }
-
-    void nms(std::vector<Detection>& res, float* output, float conf_thresh, float nms_thresh = 0.5) {
-        int det_size = classsize * 4 / sizeof(float);
-        std::map<float, std::vector<Detection>> ma;
-        for (int i = 0; i < out_size / det_size; i++) {
-            if (output[1 + det_size * i + 3] > conf_thresh)
-            {
-                Detection det;
-                memcpy(&det, &output[0 + det_size * i], 5 * sizeof(float));
-                det.class_id = getClassId(output, 1 + det_size * i + 3 + 1, classsize - 5);
-                if (ma.count(det.class_id) == 0) ma.emplace(det.class_id, std::vector<Detection>());
-                ma[det.class_id].push_back(det);
-            }
-        }
-
-        nmsforiou(res, ma, nms_thresh);
-    }
-
-    void init(std::string engine_file_path, int slot, float conff, int nameint);
-
-    void Infer(
-        int aWidth,
-        int aHeight,
-        int aChannel,
-        unsigned char* aBytes);
-    int getBigClsId(int oldClsId);
-    std::vector<Detection> boxes = {};
-
-private:
-    // 用于获取engine 输入输出的name
-
-    const char* INPUT_BLOB_NAME = "images";
-    const char* OUTPUT_BLOB_NAME = "output0";
-
-    // runtime创建engine，engine创建context
-    nvinfer1::IRuntime* runtime;
-    nvinfer1::ICudaEngine* engine;
-    nvinfer1::IExecutionContext* context;
-
-    cudaStream_t stream = nullptr;
-
-    void* buffs[2];
-
-    int iH, iW, in_size, out_size, classsize;
-
-    int name;
-
-    int slot;
-
-    float connf;
-};
+void Operation::runDetection(int n) const
+{
+	auto s = std::chrono::high_resolution_clock::now();
+	auto &ic = ccklist.at(n % this->spar.ascNum);
+	wsoc->setImgNum(n);
+	if (spar.closed)
+		return;
+	if (spar.dataEned)
+		ic->img = ic->imgop->enhancedPhotoForMultiply(ic->img);
+	if (spar.Acquisition < 0)
+	{
+		ic->imgop->saveImg(n, ic->img, coild, spar.scoilid, 0);
+		return;
+	}
+	auto decs = ic->getBboxs(n);
+	if (decs.size() > 1)
+		wsoc->setBoundary(decs.at(1).at(0));
+	if (spar.Acquisition < 2 && (decs.size() > 2 || n == 0))
+	{
+		if (spar.openAied)
+		{
+			cv::Rect r(0, 0, decs[1][0] - 30, ic->img.rows);
+			cv::Mat m;
+			ic->img.copyTo(m);
+			m(r).setTo(cv::Scalar(0));
+			{
+				std::lock_guard<std::mutex> lock(inferMtx);
+				inferstore->infer(m, decs, coild, spar.scoilid, n, 0);
+			}
+		}
+		else
+			dtcode->combDecData(decs, coild, spar.scoilid);
+		ic->imgop->saveImg(n, ic->img, coild, spar.scoilid, 0);
+	}
+	else if (spar.Acquisition > 1 && spar.openAied)
+	{
+		cv::Mat m;
+		ic->img.copyTo(m);
+		{
+			std::lock_guard<std::mutex> lock(inferMtx);
+			inferstore->infer(m, decs, coild, spar.scoilid, n, spar.Acquisition);
+		}
+	}
+	if (spar.Acquisition < 1 && decs.size() < 3)
+		ic->imgop->saveImg(n, ic->img, coild, spar.scoilid, 0);
+	auto ms = (std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now() - s)).count();
+	std::cout << decs.size() << " ===" << ms << "mm;#" << n << std::endl;
+}
+void Operation::runCom(int n) const { wsoc->runSoc(std::to_string(spar.scoilid), spar.webSockectIpPort); }
+void Operation::runinfer() const
+{
+	if (spar.openAied)
+	{
+		inferstore->setMods(spar.mods, spar.Acquisition > 1 ? spar.savePath : "");
+		inferstore->setStart(true);
+		inferstore->inferForeverToStr(
+			[this](std::vector<std::string> sqls) {
+				for (auto& valStr : sqls) {
+					this->dtcode->combDecValStr(valStr);
+					this->wsoc->sendMessage(valStr);
+				}
+			});
+	}
+}
+void Operation::disOutImg(int r, const cv::Mat d) const
+{
+	pool->enqueue([this, r, d]() -> int
+				  {
+		ccklist[(r+startNum)%spar.ascNum]->img = d;
+		runDetection(r+startNum); return 0; });
+}
 

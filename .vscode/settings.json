@@ -21,7 +21,7 @@
         "${workspaceFolder}/AdcnyVdo",
         "${workspaceFolder}/AdcnyVds",
         "${workspaceFolder}/AdcnyYoo",
-        "${workspaceFolder}/AdncyEdg",
+        "${workspaceFolder}/AdcnyEdg",
         "C:/opencv/build/include",
         "C:/opencv/build/include/opencv2",
         "D:/mysql/include",
@@ -52,7 +52,7 @@
         "ADCNYVDO_EXPORTS",
         "ADCNYVDS_EXPORTS",
         "ADCNYYOO_EXPORTS",
-        "ADNCYEDG_EXPORTS"
+        "ADCNYEDG_EXPORTS"
     ],
     "C_Cpp.intelliSenseCache.scope": "workspace",
     "C_Cpp.enhancedColorization": "Enabled",

@@ -9,10 +9,10 @@
 #include <EdgeCa.h>
 
 
-#ifdef ADNCYEDG_EXPORTS
-#define ADNCYEDG_API __declspec(dllexport)
+#ifdef ADCNYEDG_EXPORTS
+#define ADCNYEDG_API __declspec(dllexport)
 #else
-#define ADNCYEDG_API __declspec(dllimport)
+#define ADCNYEDG_API __declspec(dllimport)
 #endif
 
 class __declspec(dllexport) EdgeSin : public ImgCal
