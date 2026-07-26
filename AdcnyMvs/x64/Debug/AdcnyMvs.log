@@ -1,0 +1,9 @@
+﻿  pch.cpp
+  dllmain.cpp
+  MvsStore.cpp
+  MvsWare.cpp
+  正在生成代码...
+    正在创建库 ..\x64\Debug\AdcnyMvs.lib 和对象 ..\x64\Debug\AdcnyMvs.exp
+  AdcnyMvs.vcxproj -> D:\sgfs\Adcnydec\x64\Debug\AdcnyMvs.dll
+  'pwsh.exe' 不是内部或外部命令，也不是可运行的程序
+  或批处理文件。

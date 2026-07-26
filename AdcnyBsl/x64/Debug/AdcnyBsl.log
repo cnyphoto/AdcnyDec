@@ -1,0 +1,15 @@
+﻿  pch.cpp
+  BslStore.cpp
+D:\DriveFormInfo\Adcnydec\AdcnyBsl\BslStore.cpp(111,149): warning C4244: “参数”: 从“int64_t”转换到“int”，可能丢失数据
+  (编译源文件“/BslStore.cpp”)
+  
+D:\DriveFormInfo\Adcnydec\AdcnyBsl\BslStore.cpp(156,36): warning C4101: “e”: 未引用的局部变量
+  (编译源文件“/BslStore.cpp”)
+  
+  BslWare.cpp
+  dllmain.cpp
+  正在生成代码...
+    正在创建库 ..\x64\Debug\AdcnyBsl.lib 和对象 ..\x64\Debug\AdcnyBsl.exp
+  AdcnyBsl.vcxproj -> D:\DriveFormInfo\Adcnydec\x64\Debug\AdcnyBsl.dll
+  'pwsh.exe' 不是内部或外部命令，也不是可运行的程序
+  或批处理文件。

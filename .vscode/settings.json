@@ -1,0 +1,70 @@
+{
+    "C_Cpp.default.configurationProvider": "ms-vscode.cpptools",
+    "C_Cpp.default.intelliSenseMode": "windows-msvc-x64",
+    "C_Cpp.default.compilerPath": "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/cl.exe",
+    "C_Cpp.default.cppStandard": "c++17",
+    "C_Cpp.default.cStandard": "c17",
+    "C_Cpp.default.windowsSdkVersion": "10.0.26100.0",
+    "C_Cpp.default.includePath": [
+        "${workspaceFolder}/include",
+        "${workspaceFolder}/AdcnyAcc",
+        "${workspaceFolder}/AdcnyBse",
+        "${workspaceFolder}/AdcnyBsl",
+        "${workspaceFolder}/AdcnyCck",
+        "${workspaceFolder}/AdcnyDdt",
+        "${workspaceFolder}/AdcnyDec",
+        "${workspaceFolder}/AdcnyFam",
+        "${workspaceFolder}/AdcnyFoo",
+        "${workspaceFolder}/AdcnyFvo",
+        "${workspaceFolder}/AdcnyMid",
+        "${workspaceFolder}/AdcnyMvs",
+        "${workspaceFolder}/AdcnyVdo",
+        "${workspaceFolder}/AdcnyVds",
+        "${workspaceFolder}/AdcnyYoo",
+        "${workspaceFolder}/AdncyEdg",
+        "C:/opencv/build/include",
+        "C:/opencv/build/include/opencv2",
+        "D:/mysql/include",
+        "D:/MVS/Development/Includes",
+        "D:/pylon/Development/include",
+        "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.4/include",
+        "C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/ucrt",
+        "C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/um",
+        "C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/shared",
+        "C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/winrt"
+    ],
+    "C_Cpp.default.defines": [
+        "_DEBUG",
+        "_CONSOLE",
+        "WIN32",
+        "_WINDOWS",
+        "_USRDLL",
+        "ADCNYACC_EXPORTS",
+        "ADCNYBSE_EXPORTS",
+        "ADCNYBSL_EXPORTS",
+        "ADCNYCCK_EXPORTS",
+        "ADCNYDDT_EXPORTS",
+        "ADCNYFAM_EXPORTS",
+        "ADCNYFOO_EXPORTS",
+        "ADCNYFVO_EXPORTS",
+        "ADCNYMID_EXPORTS",
+        "ADCNYMVS_EXPORTS",
+        "ADCNYVDO_EXPORTS",
+        "ADCNYVDS_EXPORTS",
+        "ADCNYYOO_EXPORTS",
+        "ADNCYEDG_EXPORTS"
+    ],
+    "C_Cpp.intelliSenseCache.scope": "workspace",
+    "C_Cpp.enhancedColorization": "Enabled",
+    "C_Cpp.errorSquiggles": "Enabled",
+    "files.associations": {
+        "*.h": "cpp"
+    },
+    "search.exclude": {
+        "x64/**": true
+    },
+    "files.exclude": {
+        "x64/Debug/*.obj": true,
+        "x64/Release/*.obj": true
+    }
+}

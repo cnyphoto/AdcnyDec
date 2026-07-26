@@ -1,0 +1,773 @@
+﻿  AdcnyDec.cpp
+C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\include\NvInfer.h(6125,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“AdcnyDec.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(155,28): warning C4251: “YoloTrt::boxes”:“std::vector<Detection,std::allocator<Detection>>”需要有 dll 接口以供“YoloTrt”的客户端使用
+  (编译源文件“AdcnyDec.cpp”)
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\vector(429,7):
+      参见“std::vector<Detection,std::allocator<Detection>>”的声明
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(44,91): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+  (编译源文件“AdcnyDec.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(44,88): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+  (编译源文件“AdcnyDec.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(44,94): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+  (编译源文件“AdcnyDec.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(44,97): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+  (编译源文件“AdcnyDec.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(71,37): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+  (编译源文件“AdcnyDec.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(72,37): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+  (编译源文件“AdcnyDec.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(73,37): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+  (编译源文件“AdcnyDec.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(74,37): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+  (编译源文件“AdcnyDec.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(80,64): warning C4244: “参数”: 从“float”转换到“_Tp”，可能丢失数据
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(80,64): warning C4244:         with
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(80,64): warning C4244:         [
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(80,64): warning C4244:             _Tp=int
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(80,64): warning C4244:         ]
+  (编译源文件“AdcnyDec.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(80,50): warning C4244: “参数”: 从“float”转换到“_Tp”，可能丢失数据
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(80,50): warning C4244:         with
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(80,50): warning C4244:         [
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(80,50): warning C4244:             _Tp=int
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(80,50): warning C4244:         ]
+  (编译源文件“AdcnyDec.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(80,40): warning C4244: “参数”: 从“float”转换到“_Tp”，可能丢失数据
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(80,40): warning C4244:         with
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(80,40): warning C4244:         [
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(80,40): warning C4244:             _Tp=int
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(80,40): warning C4244:         ]
+  (编译源文件“AdcnyDec.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(80,30): warning C4244: “参数”: 从“float”转换到“_Tp”，可能丢失数据
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(80,30): warning C4244:         with
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(80,30): warning C4244:         [
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(80,30): warning C4244:             _Tp=int
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(80,30): warning C4244:         ]
+  (编译源文件“AdcnyDec.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(107,26): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+  (编译源文件“AdcnyDec.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(139,33): warning C4244: “参数”: 从“int”转换到“const float”，可能丢失数据
+  (编译源文件“AdcnyDec.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(140,23): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+  (编译源文件“AdcnyDec.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\imgOp.h(22,14): warning C4251: “imgOp::folder”:“std::basic_string<char,std::char_traits<char>,std::allocator<char>>”需要有 dll 接口以供“imgOp”的客户端使用
+  (编译源文件“AdcnyDec.cpp”)
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\xstring(527,7):
+      参见“std::basic_string<char,std::char_traits<char>,std::allocator<char>>”的声明
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(52,18): warning C4251: “InferStore::sqlip”:“std::basic_string<char,std::char_traits<char>,std::allocator<char>>”需要有 dll 接口以供“InferStore”的客户端使用
+  (编译源文件“AdcnyDec.cpp”)
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\xstring(527,7):
+      参见“std::basic_string<char,std::char_traits<char>,std::allocator<char>>”的声明
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(53,24): warning C4251: “InferStore::procDt_queue”:“std::queue<InferStore::procDt,std::deque<InferStore::procDt,std::allocator<InferStore::procDt>>>”需要有 dll 接口以供“InferStore”的客户端使用
+  (编译源文件“AdcnyDec.cpp”)
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\queue(27,7):
+      参见“std::queue<InferStore::procDt,std::deque<InferStore::procDt,std::allocator<InferStore::procDt>>>”的声明
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(54,16): warning C4251: “InferStore::mtx”:“std::mutex”需要有 dll 接口以供“InferStore”的客户端使用
+  (编译源文件“AdcnyDec.cpp”)
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\mutex(98,19):
+      参见“std::mutex”的声明
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(56,27): warning C4251: “InferStore::yolotrts”:“std::vector<YoloTrt *,std::allocator<YoloTrt *>>”需要有 dll 接口以供“InferStore”的客户端使用
+  (编译源文件“AdcnyDec.cpp”)
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\vector(429,7):
+      参见“std::vector<YoloTrt *,std::allocator<YoloTrt *>>”的声明
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(36,85): warning C4244: “参数”: 从“float”转换到“_Tp”，可能丢失数据
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(36,85): warning C4244:         with
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(36,85): warning C4244:         [
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(36,85): warning C4244:             _Tp=int
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(36,85): warning C4244:         ]
+  (编译源文件“AdcnyDec.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(36,71): warning C4244: “参数”: 从“float”转换到“_Tp”，可能丢失数据
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(36,71): warning C4244:         with
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(36,71): warning C4244:         [
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(36,71): warning C4244:             _Tp=int
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(36,71): warning C4244:         ]
+  (编译源文件“AdcnyDec.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(36,57): warning C4244: “参数”: 从“float”转换到“_Tp”，可能丢失数据
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(36,57): warning C4244:         with
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(36,57): warning C4244:         [
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(36,57): warning C4244:             _Tp=int
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(36,57): warning C4244:         ]
+  (编译源文件“AdcnyDec.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(36,43): warning C4244: “参数”: 从“float”转换到“_Tp”，可能丢失数据
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(36,43): warning C4244:         with
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(36,43): warning C4244:         [
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(36,43): warning C4244:             _Tp=int
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(36,43): warning C4244:         ]
+  (编译源文件“AdcnyDec.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(37,109): warning C4244: “参数”: 从“float”转换到“_Tp”，可能丢失数据
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(37,109): warning C4244:         with
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(37,109): warning C4244:         [
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(37,109): warning C4244:             _Tp=int
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(37,109): warning C4244:         ]
+  (编译源文件“AdcnyDec.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(37,89): warning C4244: “参数”: 从“float”转换到“_Tp”，可能丢失数据
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(37,89): warning C4244:         with
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(37,89): warning C4244:         [
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(37,89): warning C4244:             _Tp=int
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(37,89): warning C4244:         ]
+  (编译源文件“AdcnyDec.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(37,69): warning C4244: “参数”: 从“float”转换到“_Tp”，可能丢失数据
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(37,69): warning C4244:         with
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(37,69): warning C4244:         [
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(37,69): warning C4244:             _Tp=int
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(37,69): warning C4244:         ]
+  (编译源文件“AdcnyDec.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(37,49): warning C4244: “参数”: 从“float”转换到“_Tp”，可能丢失数据
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(37,49): warning C4244:         with
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(37,49): warning C4244:         [
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(37,49): warning C4244:             _Tp=int
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(37,49): warning C4244:         ]
+  (编译源文件“AdcnyDec.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\DbToCode.h(42,33): warning C4251: “DbToCode::sqlStrBses”:“std::vector<cv::String,std::allocator<cv::String>>”需要有 dll 接口以供“DbToCode”的客户端使用
+  (编译源文件“AdcnyDec.cpp”)
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\vector(429,7):
+      参见“std::vector<cv::String,std::allocator<cv::String>>”的声明
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\AccLibary.h(49,32): warning C4251: “AccLibary::workers”:“std::vector<std::thread,std::allocator<std::thread>>”需要有 dll 接口以供“AccLibary”的客户端使用
+  (编译源文件“AdcnyDec.cpp”)
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\vector(429,7):
+      参见“std::vector<std::thread,std::allocator<std::thread>>”的声明
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\AccLibary.h(51,41): warning C4251: “AccLibary::tasks”:“std::queue<std::function<void (void)>,std::deque<std::function<void (void)>,std::allocator<std::function<void (void)>>>>”需要有 dll 接口以供“AccLibary”的客户端使用
+  (编译源文件“AdcnyDec.cpp”)
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\queue(27,7):
+      参见“std::queue<std::function<void (void)>,std::deque<std::function<void (void)>,std::allocator<std::function<void (void)>>>>”的声明
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\AccLibary.h(53,16): warning C4251: “AccLibary::queue_mutex”:“std::mutex”需要有 dll 接口以供“AccLibary”的客户端使用
+  (编译源文件“AdcnyDec.cpp”)
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\mutex(98,19):
+      参见“std::mutex”的声明
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\AccLibary.h(54,29): warning C4251: “AccLibary::condition”:“std::condition_variable”需要有 dll 接口以供“AccLibary”的客户端使用
+  (编译源文件“AdcnyDec.cpp”)
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\mutex(532,19):
+      参见“std::condition_variable”的声明
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\ImgCal.h(32,26): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+  (编译源文件“AdcnyDec.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\ImgCal.h(33,26): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+  (编译源文件“AdcnyDec.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\ImgCal.h(34,26): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+  (编译源文件“AdcnyDec.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\ImgCal.h(35,26): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+  (编译源文件“AdcnyDec.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\ImgCal.h(36,26): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+  (编译源文件“AdcnyDec.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\Crack.h(22,43): warning C4275: 非 dll 接口 class“ImgCal”用作 dll 接口 class“Crack”的基
+  (编译源文件“AdcnyDec.cpp”)
+      D:\q102\0115Adcnydec\AdcnyDec\include\ImgCal.h(14,7):
+      参见“ImgCal”的声明
+      D:\q102\0115Adcnydec\AdcnyDec\include\Crack.h(22,29):
+      参见“Crack”的声明
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\utility(247,16): warning C4244: “初始化”: 从“int”转换到“_Ty1”，可能丢失数据
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\utility(247,16): warning C4244:         with
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\utility(247,16): warning C4244:         [
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\utility(247,16): warning C4244:             _Ty1=const float
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\utility(247,16): warning C4244:         ]
+  (编译源文件“AdcnyDec.cpp”)
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\utility(247,16):
+      模板实例化上下文(最早的实例化上下文)为
+          D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(139,53):
+          查看对正在编译的函数 模板 实例化“std::pair<std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const float,std::vector<Detection,std::allocator<Detection>>>>>>,bool> std::_Tree<std::_Tmap_traits<_Kty,_Ty,_Pr,_Alloc,false>>::emplace<int&,std::vector<Detection,std::allocator<Detection>>>(int &,std::vector<Detection,std::allocator<Detection>> &&)”的引用
+          with
+          [
+              _Kty=float,
+              _Ty=std::vector<Detection,std::allocator<Detection>>,
+              _Pr=std::less<float>,
+              _Alloc=std::allocator<std::pair<const float,std::vector<Detection,std::allocator<Detection>>>>
+          ]
+              D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(139,60):
+              请参阅 "YoloTrt::nms" 中对 "std::_Tree<std::_Tmap_traits<_Kty,_Ty,_Pr,_Alloc,false>>::emplace" 的第一个引用
+          with
+          [
+              _Kty=float,
+              _Ty=std::vector<Detection,std::allocator<Detection>>,
+              _Pr=std::less<float>,
+              _Alloc=std::allocator<std::pair<const float,std::vector<Detection,std::allocator<Detection>>>>
+          ]
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\xtree(1024,30):
+          查看对正在编译的函数 模板 实例化“std::pair<std::_Tree_node<std::pair<const float,std::vector<Detection,std::allocator<Detection>>>,std::_Default_allocator_traits<_Alloc>::void_pointer> *,bool> std::_Tree<std::_Tmap_traits<_Kty,_Ty,_Pr,_Alloc,false>>::_Emplace<int&,_Ty>(int &,_Ty &&)”的引用
+          with
+          [
+              _Alloc=std::allocator<std::pair<const float,std::vector<Detection,std::allocator<Detection>>>>,
+              _Kty=float,
+              _Ty=std::vector<Detection,std::allocator<Detection>>,
+              _Pr=std::less<float>
+          ]
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\xtree(1002,46):
+          查看对正在编译的函数 模板 实例化“std::_Tree_temp_node<std::allocator<std::_Tree_node<std::pair<const float,std::vector<Detection,std::allocator<Detection>>>,std::_Default_allocator_traits<_Alloc>::void_pointer>>>::_Tree_temp_node<int&,_Ty>(_Alnode &,std::_Tree_node<std::pair<const float,std::vector<Detection,std::allocator<Detection>>>,std::_Default_allocator_traits<_Alloc>::void_pointer> *,int &,_Ty &&)”的引用
+          with
+          [
+              _Alloc=std::allocator<std::pair<const float,std::vector<Detection,std::allocator<Detection>>>>,
+              _Ty=std::vector<Detection,std::allocator<Detection>>,
+              _Alnode=std::allocator<std::_Tree_node<std::pair<const float,std::vector<Detection,std::allocator<Detection>>>,std::_Default_allocator_traits<std::allocator<std::pair<const float,std::vector<Detection,std::allocator<Detection>>>>>::void_pointer>>
+          ]
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\xtree(806,25):
+          查看对正在编译的函数 模板 实例化“void std::_Default_allocator_traits<_Alloc>::construct<_Ty,int&,std::vector<Detection,std::allocator<Detection>>>(_Alloc &,_Objty *const ,int &,std::vector<Detection,std::allocator<Detection>> &&)”的引用
+          with
+          [
+              _Alloc=std::allocator<std::_Tree_node<std::pair<const float,std::vector<Detection,std::allocator<Detection>>>,std::_Default_allocator_traits<std::allocator<std::pair<const float,std::vector<Detection,std::allocator<Detection>>>>>::void_pointer>>,
+              _Ty=std::pair<const float,std::vector<Detection,std::allocator<Detection>>>,
+              _Objty=std::pair<const float,std::vector<Detection,std::allocator<Detection>>>
+          ]
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\xmemory(700,82):
+          查看对正在编译的函数 模板 实例化“std::pair<const float,std::vector<Detection,std::allocator<Detection>>>::pair<int&,_Ty,0>(_Other1,_Other2 &&) noexcept”的引用
+          with
+          [
+              _Ty=std::vector<Detection,std::allocator<Detection>>,
+              _Other1=int &,
+              _Other2=std::vector<Detection,std::allocator<Detection>>
+          ]
+  
+  easywsclient.cpp
+D:\q102\0115Adcnydec\AdcnyDec\AdcnyDec\easywsclient.cpp(103,46): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+D:\q102\0115Adcnydec\AdcnyDec\AdcnyDec\easywsclient.cpp(205,31): warning C4244: “参数”: 从“socket_t”转换到“int”，可能丢失数据
+D:\q102\0115Adcnydec\AdcnyDec\AdcnyDec\easywsclient.cpp(209,23): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+D:\q102\0115Adcnydec\AdcnyDec\AdcnyDec\easywsclient.cpp(230,70): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+D:\q102\0115Adcnydec\AdcnyDec\AdcnyDec\easywsclient.cpp(497,92): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+D:\q102\0115Adcnydec\AdcnyDec\AdcnyDec\easywsclient.cpp(499,88): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+D:\q102\0115Adcnydec\AdcnyDec\AdcnyDec\easywsclient.cpp(502,97): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+D:\q102\0115Adcnydec\AdcnyDec\AdcnyDec\easywsclient.cpp(504,88): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+D:\q102\0115Adcnydec\AdcnyDec\AdcnyDec\easywsclient.cpp(505,89): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+D:\q102\0115Adcnydec\AdcnyDec\AdcnyDec\easywsclient.cpp(507,100): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+D:\q102\0115Adcnydec\AdcnyDec\AdcnyDec\easywsclient.cpp(509,113): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+D:\q102\0115Adcnydec\AdcnyDec\AdcnyDec\easywsclient.cpp(510,95): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+D:\q102\0115Adcnydec\AdcnyDec\AdcnyDec\easywsclient.cpp(511,70): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+  Operation.cpp
+C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\include\NvInfer.h(6125,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“Operation.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(155,28): warning C4251: “YoloTrt::boxes”:“std::vector<Detection,std::allocator<Detection>>”需要有 dll 接口以供“YoloTrt”的客户端使用
+  (编译源文件“Operation.cpp”)
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\vector(429,7):
+      参见“std::vector<Detection,std::allocator<Detection>>”的声明
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(44,91): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+  (编译源文件“Operation.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(44,88): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+  (编译源文件“Operation.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(44,94): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+  (编译源文件“Operation.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(44,97): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+  (编译源文件“Operation.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(71,37): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+  (编译源文件“Operation.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(72,37): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+  (编译源文件“Operation.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(73,37): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+  (编译源文件“Operation.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(74,37): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+  (编译源文件“Operation.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(80,64): warning C4244: “参数”: 从“float”转换到“_Tp”，可能丢失数据
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(80,64): warning C4244:         with
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(80,64): warning C4244:         [
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(80,64): warning C4244:             _Tp=int
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(80,64): warning C4244:         ]
+  (编译源文件“Operation.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(80,50): warning C4244: “参数”: 从“float”转换到“_Tp”，可能丢失数据
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(80,50): warning C4244:         with
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(80,50): warning C4244:         [
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(80,50): warning C4244:             _Tp=int
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(80,50): warning C4244:         ]
+  (编译源文件“Operation.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(80,40): warning C4244: “参数”: 从“float”转换到“_Tp”，可能丢失数据
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(80,40): warning C4244:         with
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(80,40): warning C4244:         [
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(80,40): warning C4244:             _Tp=int
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(80,40): warning C4244:         ]
+  (编译源文件“Operation.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(80,30): warning C4244: “参数”: 从“float”转换到“_Tp”，可能丢失数据
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(80,30): warning C4244:         with
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(80,30): warning C4244:         [
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(80,30): warning C4244:             _Tp=int
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(80,30): warning C4244:         ]
+  (编译源文件“Operation.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(107,26): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+  (编译源文件“Operation.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(139,33): warning C4244: “参数”: 从“int”转换到“const float”，可能丢失数据
+  (编译源文件“Operation.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(140,23): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+  (编译源文件“Operation.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\imgOp.h(22,14): warning C4251: “imgOp::folder”:“std::basic_string<char,std::char_traits<char>,std::allocator<char>>”需要有 dll 接口以供“imgOp”的客户端使用
+  (编译源文件“Operation.cpp”)
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\xstring(527,7):
+      参见“std::basic_string<char,std::char_traits<char>,std::allocator<char>>”的声明
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(52,18): warning C4251: “InferStore::sqlip”:“std::basic_string<char,std::char_traits<char>,std::allocator<char>>”需要有 dll 接口以供“InferStore”的客户端使用
+  (编译源文件“Operation.cpp”)
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\xstring(527,7):
+      参见“std::basic_string<char,std::char_traits<char>,std::allocator<char>>”的声明
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(53,24): warning C4251: “InferStore::procDt_queue”:“std::queue<InferStore::procDt,std::deque<InferStore::procDt,std::allocator<InferStore::procDt>>>”需要有 dll 接口以供“InferStore”的客户端使用
+  (编译源文件“Operation.cpp”)
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\queue(27,7):
+      参见“std::queue<InferStore::procDt,std::deque<InferStore::procDt,std::allocator<InferStore::procDt>>>”的声明
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(54,16): warning C4251: “InferStore::mtx”:“std::mutex”需要有 dll 接口以供“InferStore”的客户端使用
+  (编译源文件“Operation.cpp”)
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\mutex(98,19):
+      参见“std::mutex”的声明
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(56,27): warning C4251: “InferStore::yolotrts”:“std::vector<YoloTrt *,std::allocator<YoloTrt *>>”需要有 dll 接口以供“InferStore”的客户端使用
+  (编译源文件“Operation.cpp”)
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\vector(429,7):
+      参见“std::vector<YoloTrt *,std::allocator<YoloTrt *>>”的声明
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(36,85): warning C4244: “参数”: 从“float”转换到“_Tp”，可能丢失数据
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(36,85): warning C4244:         with
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(36,85): warning C4244:         [
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(36,85): warning C4244:             _Tp=int
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(36,85): warning C4244:         ]
+  (编译源文件“Operation.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(36,71): warning C4244: “参数”: 从“float”转换到“_Tp”，可能丢失数据
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(36,71): warning C4244:         with
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(36,71): warning C4244:         [
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(36,71): warning C4244:             _Tp=int
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(36,71): warning C4244:         ]
+  (编译源文件“Operation.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(36,57): warning C4244: “参数”: 从“float”转换到“_Tp”，可能丢失数据
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(36,57): warning C4244:         with
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(36,57): warning C4244:         [
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(36,57): warning C4244:             _Tp=int
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(36,57): warning C4244:         ]
+  (编译源文件“Operation.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(36,43): warning C4244: “参数”: 从“float”转换到“_Tp”，可能丢失数据
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(36,43): warning C4244:         with
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(36,43): warning C4244:         [
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(36,43): warning C4244:             _Tp=int
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(36,43): warning C4244:         ]
+  (编译源文件“Operation.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(37,109): warning C4244: “参数”: 从“float”转换到“_Tp”，可能丢失数据
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(37,109): warning C4244:         with
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(37,109): warning C4244:         [
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(37,109): warning C4244:             _Tp=int
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(37,109): warning C4244:         ]
+  (编译源文件“Operation.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(37,89): warning C4244: “参数”: 从“float”转换到“_Tp”，可能丢失数据
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(37,89): warning C4244:         with
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(37,89): warning C4244:         [
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(37,89): warning C4244:             _Tp=int
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(37,89): warning C4244:         ]
+  (编译源文件“Operation.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(37,69): warning C4244: “参数”: 从“float”转换到“_Tp”，可能丢失数据
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(37,69): warning C4244:         with
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(37,69): warning C4244:         [
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(37,69): warning C4244:             _Tp=int
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(37,69): warning C4244:         ]
+  (编译源文件“Operation.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(37,49): warning C4244: “参数”: 从“float”转换到“_Tp”，可能丢失数据
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(37,49): warning C4244:         with
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(37,49): warning C4244:         [
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(37,49): warning C4244:             _Tp=int
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(37,49): warning C4244:         ]
+  (编译源文件“Operation.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\DbToCode.h(42,33): warning C4251: “DbToCode::sqlStrBses”:“std::vector<cv::String,std::allocator<cv::String>>”需要有 dll 接口以供“DbToCode”的客户端使用
+  (编译源文件“Operation.cpp”)
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\vector(429,7):
+      参见“std::vector<cv::String,std::allocator<cv::String>>”的声明
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\AccLibary.h(49,32): warning C4251: “AccLibary::workers”:“std::vector<std::thread,std::allocator<std::thread>>”需要有 dll 接口以供“AccLibary”的客户端使用
+  (编译源文件“Operation.cpp”)
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\vector(429,7):
+      参见“std::vector<std::thread,std::allocator<std::thread>>”的声明
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\AccLibary.h(51,41): warning C4251: “AccLibary::tasks”:“std::queue<std::function<void (void)>,std::deque<std::function<void (void)>,std::allocator<std::function<void (void)>>>>”需要有 dll 接口以供“AccLibary”的客户端使用
+  (编译源文件“Operation.cpp”)
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\queue(27,7):
+      参见“std::queue<std::function<void (void)>,std::deque<std::function<void (void)>,std::allocator<std::function<void (void)>>>>”的声明
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\AccLibary.h(53,16): warning C4251: “AccLibary::queue_mutex”:“std::mutex”需要有 dll 接口以供“AccLibary”的客户端使用
+  (编译源文件“Operation.cpp”)
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\mutex(98,19):
+      参见“std::mutex”的声明
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\AccLibary.h(54,29): warning C4251: “AccLibary::condition”:“std::condition_variable”需要有 dll 接口以供“AccLibary”的客户端使用
+  (编译源文件“Operation.cpp”)
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\mutex(532,19):
+      参见“std::condition_variable”的声明
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\ImgCal.h(32,26): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+  (编译源文件“Operation.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\ImgCal.h(33,26): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+  (编译源文件“Operation.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\ImgCal.h(34,26): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+  (编译源文件“Operation.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\ImgCal.h(35,26): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+  (编译源文件“Operation.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\ImgCal.h(36,26): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+  (编译源文件“Operation.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\Crack.h(22,43): warning C4275: 非 dll 接口 class“ImgCal”用作 dll 接口 class“Crack”的基
+  (编译源文件“Operation.cpp”)
+      D:\q102\0115Adcnydec\AdcnyDec\include\ImgCal.h(14,7):
+      参见“ImgCal”的声明
+      D:\q102\0115Adcnydec\AdcnyDec\include\Crack.h(22,29):
+      参见“Crack”的声明
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\WholeDec.h(12,47): warning C4275: 非 dll 接口 class“ImgCal”用作 dll 接口 class“WholeDec”的基
+  (编译源文件“Operation.cpp”)
+      D:\q102\0115Adcnydec\AdcnyDec\include\ImgCal.h(14,7):
+      参见“ImgCal”的声明
+      D:\q102\0115Adcnydec\AdcnyDec\include\WholeDec.h(12,29):
+      参见“WholeDec”的声明
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\WholeDec.h(39,26): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+  (编译源文件“Operation.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\WholeDec.h(40,26): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+  (编译源文件“Operation.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\WholeDec.h(41,26): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+  (编译源文件“Operation.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\WholeDec.h(42,26): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+  (编译源文件“Operation.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\WholeDec.h(43,26): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+  (编译源文件“Operation.cpp”)
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\utility(247,16): warning C4244: “初始化”: 从“int”转换到“_Ty1”，可能丢失数据
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\utility(247,16): warning C4244:         with
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\utility(247,16): warning C4244:         [
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\utility(247,16): warning C4244:             _Ty1=const float
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\utility(247,16): warning C4244:         ]
+  (编译源文件“Operation.cpp”)
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\utility(247,16):
+      模板实例化上下文(最早的实例化上下文)为
+          D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(139,53):
+          查看对正在编译的函数 模板 实例化“std::pair<std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const float,std::vector<Detection,std::allocator<Detection>>>>>>,bool> std::_Tree<std::_Tmap_traits<_Kty,_Ty,_Pr,_Alloc,false>>::emplace<int&,std::vector<Detection,std::allocator<Detection>>>(int &,std::vector<Detection,std::allocator<Detection>> &&)”的引用
+          with
+          [
+              _Kty=float,
+              _Ty=std::vector<Detection,std::allocator<Detection>>,
+              _Pr=std::less<float>,
+              _Alloc=std::allocator<std::pair<const float,std::vector<Detection,std::allocator<Detection>>>>
+          ]
+              D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(139,60):
+              请参阅 "YoloTrt::nms" 中对 "std::_Tree<std::_Tmap_traits<_Kty,_Ty,_Pr,_Alloc,false>>::emplace" 的第一个引用
+          with
+          [
+              _Kty=float,
+              _Ty=std::vector<Detection,std::allocator<Detection>>,
+              _Pr=std::less<float>,
+              _Alloc=std::allocator<std::pair<const float,std::vector<Detection,std::allocator<Detection>>>>
+          ]
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\xtree(1024,30):
+          查看对正在编译的函数 模板 实例化“std::pair<std::_Tree_node<std::pair<const float,std::vector<Detection,std::allocator<Detection>>>,std::_Default_allocator_traits<_Alloc>::void_pointer> *,bool> std::_Tree<std::_Tmap_traits<_Kty,_Ty,_Pr,_Alloc,false>>::_Emplace<int&,_Ty>(int &,_Ty &&)”的引用
+          with
+          [
+              _Alloc=std::allocator<std::pair<const float,std::vector<Detection,std::allocator<Detection>>>>,
+              _Kty=float,
+              _Ty=std::vector<Detection,std::allocator<Detection>>,
+              _Pr=std::less<float>
+          ]
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\xtree(1002,46):
+          查看对正在编译的函数 模板 实例化“std::_Tree_temp_node<std::allocator<std::_Tree_node<std::pair<const float,std::vector<Detection,std::allocator<Detection>>>,std::_Default_allocator_traits<_Alloc>::void_pointer>>>::_Tree_temp_node<int&,_Ty>(_Alnode &,std::_Tree_node<std::pair<const float,std::vector<Detection,std::allocator<Detection>>>,std::_Default_allocator_traits<_Alloc>::void_pointer> *,int &,_Ty &&)”的引用
+          with
+          [
+              _Alloc=std::allocator<std::pair<const float,std::vector<Detection,std::allocator<Detection>>>>,
+              _Ty=std::vector<Detection,std::allocator<Detection>>,
+              _Alnode=std::allocator<std::_Tree_node<std::pair<const float,std::vector<Detection,std::allocator<Detection>>>,std::_Default_allocator_traits<std::allocator<std::pair<const float,std::vector<Detection,std::allocator<Detection>>>>>::void_pointer>>
+          ]
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\xtree(806,25):
+          查看对正在编译的函数 模板 实例化“void std::_Default_allocator_traits<_Alloc>::construct<_Ty,int&,std::vector<Detection,std::allocator<Detection>>>(_Alloc &,_Objty *const ,int &,std::vector<Detection,std::allocator<Detection>> &&)”的引用
+          with
+          [
+              _Alloc=std::allocator<std::_Tree_node<std::pair<const float,std::vector<Detection,std::allocator<Detection>>>,std::_Default_allocator_traits<std::allocator<std::pair<const float,std::vector<Detection,std::allocator<Detection>>>>>::void_pointer>>,
+              _Ty=std::pair<const float,std::vector<Detection,std::allocator<Detection>>>,
+              _Objty=std::pair<const float,std::vector<Detection,std::allocator<Detection>>>
+          ]
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\xmemory(700,82):
+          查看对正在编译的函数 模板 实例化“std::pair<const float,std::vector<Detection,std::allocator<Detection>>>::pair<int&,_Ty,0>(_Other1,_Other2 &&) noexcept”的引用
+          with
+          [
+              _Ty=std::vector<Detection,std::allocator<Detection>>,
+              _Other1=int &,
+              _Other2=std::vector<Detection,std::allocator<Detection>>
+          ]
+  
+  Wsoc.cpp
+C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\include\NvInfer.h(6125,1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  (编译源文件“Wsoc.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(155,28): warning C4251: “YoloTrt::boxes”:“std::vector<Detection,std::allocator<Detection>>”需要有 dll 接口以供“YoloTrt”的客户端使用
+  (编译源文件“Wsoc.cpp”)
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\vector(429,7):
+      参见“std::vector<Detection,std::allocator<Detection>>”的声明
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(44,91): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+  (编译源文件“Wsoc.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(44,88): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+  (编译源文件“Wsoc.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(44,94): warning C4267: “参数”: 从“size_t”转换到“int”，可能丢失数据
+  (编译源文件“Wsoc.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(44,97): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+  (编译源文件“Wsoc.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(71,37): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+  (编译源文件“Wsoc.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(72,37): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+  (编译源文件“Wsoc.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(73,37): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+  (编译源文件“Wsoc.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(74,37): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+  (编译源文件“Wsoc.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(80,64): warning C4244: “参数”: 从“float”转换到“_Tp”，可能丢失数据
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(80,64): warning C4244:         with
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(80,64): warning C4244:         [
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(80,64): warning C4244:             _Tp=int
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(80,64): warning C4244:         ]
+  (编译源文件“Wsoc.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(80,50): warning C4244: “参数”: 从“float”转换到“_Tp”，可能丢失数据
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(80,50): warning C4244:         with
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(80,50): warning C4244:         [
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(80,50): warning C4244:             _Tp=int
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(80,50): warning C4244:         ]
+  (编译源文件“Wsoc.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(80,40): warning C4244: “参数”: 从“float”转换到“_Tp”，可能丢失数据
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(80,40): warning C4244:         with
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(80,40): warning C4244:         [
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(80,40): warning C4244:             _Tp=int
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(80,40): warning C4244:         ]
+  (编译源文件“Wsoc.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(80,30): warning C4244: “参数”: 从“float”转换到“_Tp”，可能丢失数据
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(80,30): warning C4244:         with
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(80,30): warning C4244:         [
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(80,30): warning C4244:             _Tp=int
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(80,30): warning C4244:         ]
+  (编译源文件“Wsoc.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(107,26): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+  (编译源文件“Wsoc.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(139,33): warning C4244: “参数”: 从“int”转换到“const float”，可能丢失数据
+  (编译源文件“Wsoc.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(140,23): warning C4244: “参数”: 从“int”转换到“float”，可能丢失数据
+  (编译源文件“Wsoc.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\imgOp.h(22,14): warning C4251: “imgOp::folder”:“std::basic_string<char,std::char_traits<char>,std::allocator<char>>”需要有 dll 接口以供“imgOp”的客户端使用
+  (编译源文件“Wsoc.cpp”)
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\xstring(527,7):
+      参见“std::basic_string<char,std::char_traits<char>,std::allocator<char>>”的声明
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(52,18): warning C4251: “InferStore::sqlip”:“std::basic_string<char,std::char_traits<char>,std::allocator<char>>”需要有 dll 接口以供“InferStore”的客户端使用
+  (编译源文件“Wsoc.cpp”)
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\xstring(527,7):
+      参见“std::basic_string<char,std::char_traits<char>,std::allocator<char>>”的声明
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(53,24): warning C4251: “InferStore::procDt_queue”:“std::queue<InferStore::procDt,std::deque<InferStore::procDt,std::allocator<InferStore::procDt>>>”需要有 dll 接口以供“InferStore”的客户端使用
+  (编译源文件“Wsoc.cpp”)
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\queue(27,7):
+      参见“std::queue<InferStore::procDt,std::deque<InferStore::procDt,std::allocator<InferStore::procDt>>>”的声明
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(54,16): warning C4251: “InferStore::mtx”:“std::mutex”需要有 dll 接口以供“InferStore”的客户端使用
+  (编译源文件“Wsoc.cpp”)
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\mutex(98,19):
+      参见“std::mutex”的声明
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(56,27): warning C4251: “InferStore::yolotrts”:“std::vector<YoloTrt *,std::allocator<YoloTrt *>>”需要有 dll 接口以供“InferStore”的客户端使用
+  (编译源文件“Wsoc.cpp”)
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\vector(429,7):
+      参见“std::vector<YoloTrt *,std::allocator<YoloTrt *>>”的声明
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(36,85): warning C4244: “参数”: 从“float”转换到“_Tp”，可能丢失数据
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(36,85): warning C4244:         with
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(36,85): warning C4244:         [
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(36,85): warning C4244:             _Tp=int
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(36,85): warning C4244:         ]
+  (编译源文件“Wsoc.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(36,71): warning C4244: “参数”: 从“float”转换到“_Tp”，可能丢失数据
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(36,71): warning C4244:         with
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(36,71): warning C4244:         [
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(36,71): warning C4244:             _Tp=int
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(36,71): warning C4244:         ]
+  (编译源文件“Wsoc.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(36,57): warning C4244: “参数”: 从“float”转换到“_Tp”，可能丢失数据
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(36,57): warning C4244:         with
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(36,57): warning C4244:         [
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(36,57): warning C4244:             _Tp=int
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(36,57): warning C4244:         ]
+  (编译源文件“Wsoc.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(36,43): warning C4244: “参数”: 从“float”转换到“_Tp”，可能丢失数据
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(36,43): warning C4244:         with
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(36,43): warning C4244:         [
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(36,43): warning C4244:             _Tp=int
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(36,43): warning C4244:         ]
+  (编译源文件“Wsoc.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(37,109): warning C4244: “参数”: 从“float”转换到“_Tp”，可能丢失数据
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(37,109): warning C4244:         with
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(37,109): warning C4244:         [
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(37,109): warning C4244:             _Tp=int
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(37,109): warning C4244:         ]
+  (编译源文件“Wsoc.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(37,89): warning C4244: “参数”: 从“float”转换到“_Tp”，可能丢失数据
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(37,89): warning C4244:         with
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(37,89): warning C4244:         [
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(37,89): warning C4244:             _Tp=int
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(37,89): warning C4244:         ]
+  (编译源文件“Wsoc.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(37,69): warning C4244: “参数”: 从“float”转换到“_Tp”，可能丢失数据
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(37,69): warning C4244:         with
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(37,69): warning C4244:         [
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(37,69): warning C4244:             _Tp=int
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(37,69): warning C4244:         ]
+  (编译源文件“Wsoc.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(37,49): warning C4244: “参数”: 从“float”转换到“_Tp”，可能丢失数据
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(37,49): warning C4244:         with
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(37,49): warning C4244:         [
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(37,49): warning C4244:             _Tp=int
+D:\q102\0115Adcnydec\AdcnyDec\include\InferStore.h(37,49): warning C4244:         ]
+  (编译源文件“Wsoc.cpp”)
+  
+D:\q102\0115Adcnydec\AdcnyDec\include\DbToCode.h(42,33): warning C4251: “DbToCode::sqlStrBses”:“std::vector<cv::String,std::allocator<cv::String>>”需要有 dll 接口以供“DbToCode”的客户端使用
+  (编译源文件“Wsoc.cpp”)
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\vector(429,7):
+      参见“std::vector<cv::String,std::allocator<cv::String>>”的声明
+  
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\utility(247,16): warning C4244: “初始化”: 从“int”转换到“_Ty1”，可能丢失数据
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\utility(247,16): warning C4244:         with
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\utility(247,16): warning C4244:         [
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\utility(247,16): warning C4244:             _Ty1=const float
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\utility(247,16): warning C4244:         ]
+  (编译源文件“Wsoc.cpp”)
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\utility(247,16):
+      模板实例化上下文(最早的实例化上下文)为
+          D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(139,53):
+          查看对正在编译的函数 模板 实例化“std::pair<std::_Tree_iterator<std::_Tree_val<std::_Tree_simple_types<std::pair<const float,std::vector<Detection,std::allocator<Detection>>>>>>,bool> std::_Tree<std::_Tmap_traits<_Kty,_Ty,_Pr,_Alloc,false>>::emplace<int&,std::vector<Detection,std::allocator<Detection>>>(int &,std::vector<Detection,std::allocator<Detection>> &&)”的引用
+          with
+          [
+              _Kty=float,
+              _Ty=std::vector<Detection,std::allocator<Detection>>,
+              _Pr=std::less<float>,
+              _Alloc=std::allocator<std::pair<const float,std::vector<Detection,std::allocator<Detection>>>>
+          ]
+              D:\q102\0115Adcnydec\AdcnyDec\include\Yolotrt.h(139,60):
+              请参阅 "YoloTrt::nms" 中对 "std::_Tree<std::_Tmap_traits<_Kty,_Ty,_Pr,_Alloc,false>>::emplace" 的第一个引用
+          with
+          [
+              _Kty=float,
+              _Ty=std::vector<Detection,std::allocator<Detection>>,
+              _Pr=std::less<float>,
+              _Alloc=std::allocator<std::pair<const float,std::vector<Detection,std::allocator<Detection>>>>
+          ]
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\xtree(1024,30):
+          查看对正在编译的函数 模板 实例化“std::pair<std::_Tree_node<std::pair<const float,std::vector<Detection,std::allocator<Detection>>>,std::_Default_allocator_traits<_Alloc>::void_pointer> *,bool> std::_Tree<std::_Tmap_traits<_Kty,_Ty,_Pr,_Alloc,false>>::_Emplace<int&,_Ty>(int &,_Ty &&)”的引用
+          with
+          [
+              _Alloc=std::allocator<std::pair<const float,std::vector<Detection,std::allocator<Detection>>>>,
+              _Kty=float,
+              _Ty=std::vector<Detection,std::allocator<Detection>>,
+              _Pr=std::less<float>
+          ]
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\xtree(1002,46):
+          查看对正在编译的函数 模板 实例化“std::_Tree_temp_node<std::allocator<std::_Tree_node<std::pair<const float,std::vector<Detection,std::allocator<Detection>>>,std::_Default_allocator_traits<_Alloc>::void_pointer>>>::_Tree_temp_node<int&,_Ty>(_Alnode &,std::_Tree_node<std::pair<const float,std::vector<Detection,std::allocator<Detection>>>,std::_Default_allocator_traits<_Alloc>::void_pointer> *,int &,_Ty &&)”的引用
+          with
+          [
+              _Alloc=std::allocator<std::pair<const float,std::vector<Detection,std::allocator<Detection>>>>,
+              _Ty=std::vector<Detection,std::allocator<Detection>>,
+              _Alnode=std::allocator<std::_Tree_node<std::pair<const float,std::vector<Detection,std::allocator<Detection>>>,std::_Default_allocator_traits<std::allocator<std::pair<const float,std::vector<Detection,std::allocator<Detection>>>>>::void_pointer>>
+          ]
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\xtree(806,25):
+          查看对正在编译的函数 模板 实例化“void std::_Default_allocator_traits<_Alloc>::construct<_Ty,int&,std::vector<Detection,std::allocator<Detection>>>(_Alloc &,_Objty *const ,int &,std::vector<Detection,std::allocator<Detection>> &&)”的引用
+          with
+          [
+              _Alloc=std::allocator<std::_Tree_node<std::pair<const float,std::vector<Detection,std::allocator<Detection>>>,std::_Default_allocator_traits<std::allocator<std::pair<const float,std::vector<Detection,std::allocator<Detection>>>>>::void_pointer>>,
+              _Ty=std::pair<const float,std::vector<Detection,std::allocator<Detection>>>,
+              _Objty=std::pair<const float,std::vector<Detection,std::allocator<Detection>>>
+          ]
+          C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\xmemory(700,82):
+          查看对正在编译的函数 模板 实例化“std::pair<const float,std::vector<Detection,std::allocator<Detection>>>::pair<int&,_Ty,0>(_Other1,_Other2 &&) noexcept”的引用
+          with
+          [
+              _Ty=std::vector<Detection,std::allocator<Detection>>,
+              _Other1=int &,
+              _Other2=std::vector<Detection,std::allocator<Detection>>
+          ]
+  
+  正在生成代码...
+    正在创建库 ..\x64\Debug\AdcnyDec.lib 和对象 ..\x64\Debug\AdcnyDec.exp
+  AdcnyDec.vcxproj -> D:\q102\0115Adcnydec\AdcnyDec\x64\Debug\AdcnyDec.exe
+  'pwsh.exe' 不是内部或外部命令，也不是可运行的程序
+  或批处理文件。

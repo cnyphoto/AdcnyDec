@@ -1,0 +1,29 @@
+﻿  pch.cpp
+  dllmain.cpp
+  EdgeCalSilk.cpp
+  FlySilkDec.cpp
+D:\DriveFormInfo\Adcnydec\include\imgOp.h(26,14): warning C4251: “imgOp::folder”:“std::basic_string<char,std::char_traits<char>,std::allocator<char>>”需要有 dll 接口以供“imgOp”的客户端使用
+  (编译源文件“/FlySilkDec.cpp”)
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xstring(541,7):
+      参见“std::basic_string<char,std::char_traits<char>,std::allocator<char>>”的声明
+  
+D:\DriveFormInfo\Adcnydec\AdcnyVds\FlySilkDec.h(25,29): warning C4251: “FlySilkDec::config”:“std::map<std::string,int,std::less<cv::String>,std::allocator<std::pair<const std::string,int>>>”需要有 dll 接口以供“FlySilkDec”的客户端使用
+  (编译源文件“/FlySilkDec.cpp”)
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\map(72,7):
+      参见“std::map<std::string,int,std::less<cv::String>,std::allocator<std::pair<const std::string,int>>>”的声明
+  
+D:\DriveFormInfo\Adcnydec\AdcnyVds\FlySilkDec.h(12,47): warning C4275: 非 dll 接口 class“ImgCal”用作 dll 接口 class“FlySilkDec”的基
+  (编译源文件“/FlySilkDec.cpp”)
+      D:\DriveFormInfo\Adcnydec\include\ImgCal.h(15,7):
+      参见“ImgCal”的声明
+      D:\DriveFormInfo\Adcnydec\AdcnyVds\FlySilkDec.h(12,29):
+      参见“FlySilkDec”的声明
+  
+    正在创建库 ..\x64\Release\AdcnyVds.lib 和对象 ..\x64\Release\AdcnyVds.exp
+  正在生成代码
+  Previous IPDB not found, fall back to full compilation.
+  All 394 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  已完成代码的生成
+  AdcnyVds.vcxproj -> D:\DriveFormInfo\Adcnydec\x64\Release\AdcnyVds.dll
+  'pwsh.exe' 不是内部或外部命令，也不是可运行的程序
+  或批处理文件。

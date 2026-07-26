@@ -1,0 +1,83 @@
+{
+    "configurations": [
+        {
+            "name": "Win64",
+            "includePath": [
+                "${workspaceFolder}/include",
+                "${workspaceFolder}/AdcnyAcc",
+                "${workspaceFolder}/AdcnyBse",
+                "${workspaceFolder}/AdcnyBsl",
+                "${workspaceFolder}/AdcnyCck",
+                "${workspaceFolder}/AdcnyDdt",
+                "${workspaceFolder}/AdcnyDec",
+                "${workspaceFolder}/AdcnyFam",
+                "${workspaceFolder}/AdcnyFoo",
+                "${workspaceFolder}/AdcnyFvo",
+                "${workspaceFolder}/AdcnyMid",
+                "${workspaceFolder}/AdcnyMvs",
+                "${workspaceFolder}/AdcnyVdo",
+                "${workspaceFolder}/AdcnyVds",
+                "${workspaceFolder}/AdcnyYoo",
+                "${workspaceFolder}/AdncyEdg",
+                "C:/opencv/build/include",
+                "C:/opencv/build/include/opencv2",
+                "D:/mysql/include",
+                "D:/MVS/Development/Includes",
+                "D:/pylon/Development/include",
+                "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.4/include",
+                "C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/ucrt",
+                "C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/um",
+                "C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/shared",
+                "C:/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/winrt"
+            ],
+            "defines": [
+                "_DEBUG",
+                "_CONSOLE",
+                "WIN32",
+                "_WINDOWS",
+                "_USRDLL",
+                "ADCNYACC_EXPORTS",
+                "ADCNYBSE_EXPORTS",
+                "ADCNYBSL_EXPORTS",
+                "ADCNYCCK_EXPORTS",
+                "ADCNYDDT_EXPORTS",
+                "ADCNYFAM_EXPORTS",
+                "ADCNYFOO_EXPORTS",
+                "ADCNYFVO_EXPORTS",
+                "ADCNYMID_EXPORTS",
+                "ADCNYMVS_EXPORTS",
+                "ADCNYVDO_EXPORTS",
+                "ADCNYVDS_EXPORTS",
+                "ADCNYYOO_EXPORTS",
+                "ADNCYEDG_EXPORTS"
+            ],
+            "compilerPath": "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/cl.exe",
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "windows-msvc-x64",
+            "windowsSdkVersion": "10.0.26100.0",
+            "browse": {
+                "path": [
+                    "${workspaceFolder}/include",
+                    "${workspaceFolder}/AdcnyAcc",
+                    "${workspaceFolder}/AdcnyBse",
+                    "${workspaceFolder}/AdcnyBsl",
+                    "${workspaceFolder}/AdcnyCck",
+                    "${workspaceFolder}/AdcnyDdt",
+                    "${workspaceFolder}/AdcnyDec",
+                    "${workspaceFolder}/AdcnyFam",
+                    "${workspaceFolder}/AdcnyFam",
+                    "${workspaceFolder}/AdcnyFvo",
+                    "${workspaceFolder}/AdcnyMid",
+                    "${workspaceFolder}/AdcnyMvs",
+                    "${workspaceFolder}/AdcnyVdo",
+                    "${workspaceFolder}/AdcnyVds",
+                    "${workspaceFolder}/AdcnyYoo",
+                    "${workspaceFolder}/AdncyEdg"
+                ],
+                "limitSymbolsToIncludedHeaders": true
+            }
+        }
+    ],
+    "version": 4
+}

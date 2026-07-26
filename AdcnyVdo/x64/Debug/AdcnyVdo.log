@@ -1,0 +1,8 @@
+﻿  pch.cpp
+  dllmain.cpp
+  VdoWare.cpp
+  正在生成代码...
+    正在创建库 ..\x64\Debug\AdcnyVdo.lib 和对象 ..\x64\Debug\AdcnyVdo.exp
+  AdcnyVdo.vcxproj -> D:\sgfs\Adcnydec\x64\Debug\AdcnyVdo.dll
+  'pwsh.exe' 不是内部或外部命令，也不是可运行的程序
+  或批处理文件。

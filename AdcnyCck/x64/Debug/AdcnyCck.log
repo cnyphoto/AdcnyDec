@@ -1,0 +1,24 @@
+﻿  pch.cpp
+  Crack.cpp
+D:\sgfs\Adcnydec\include\imgOp.h(26,14): warning C4251: “imgOp::folder”:“std::basic_string<char,std::char_traits<char>,std::allocator<char>>”需要有 dll 接口以供“imgOp”的客户端使用
+  (编译源文件“/Crack.cpp”)
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xstring(541,7):
+      参见“std::basic_string<char,std::char_traits<char>,std::allocator<char>>”的声明
+  
+D:\sgfs\Adcnydec\include\ImgCal.h(23,10): warning C4251: “ImgCal::img”:“cv::Mat”需要有 dll 接口以供“ImgCal”的客户端使用
+  (编译源文件“/Crack.cpp”)
+      C:\opencv\build\include\opencv2\core\mat.hpp(801,18):
+      参见“cv::Mat”的声明
+  
+D:\sgfs\Adcnydec\include\ImgCal.h(33,25): warning C4251: “ImgCal::imgop”:“std::unique_ptr<imgOp,std::default_delete<imgOp>>”需要有 dll 接口以供“ImgCal”的客户端使用
+  (编译源文件“/Crack.cpp”)
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\memory(3347,7):
+      参见“std::unique_ptr<imgOp,std::default_delete<imgOp>>”的声明
+  
+  dllmain.cpp
+  EdgeCal.cpp
+  正在生成代码...
+    正在创建库 ..\x64\Debug\AdcnyCck.lib 和对象 ..\x64\Debug\AdcnyCck.exp
+Crack.obj : error LNK2019: 无法解析的外部符号 "__declspec(dllimport) public: __cdecl ImgCal::ImgCal(void)" (__imp_??0ImgCal@@QEAA@XZ)，函数 "public: __cdecl Crack::Crack(void)" (??0Crack@@QEAA@XZ) 中引用了该符号
+Crack.obj : error LNK2019: 无法解析的外部符号 "__declspec(dllimport) public: virtual __cdecl ImgCal::~ImgCal(void)" (__imp_??1ImgCal@@UEAA@XZ)，函数 "public: virtual __cdecl Crack::~Crack(void)" (??1Crack@@UEAA@XZ) 中引用了该符号
+..\x64\Debug\AdcnyCck.dll : fatal error LNK1120: 2 个无法解析的外部命令

@@ -1,0 +1,24 @@
+﻿  pch.cpp
+  Crack.cpp
+D:\DriveFormInfo\Adcnydec\include\imgOp.h(26,14): warning C4251: “imgOp::folder”:“std::basic_string<char,std::char_traits<char>,std::allocator<char>>”需要有 dll 接口以供“imgOp”的客户端使用
+  (编译源文件“/Crack.cpp”)
+      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include\xstring(541,7):
+      参见“std::basic_string<char,std::char_traits<char>,std::allocator<char>>”的声明
+  
+D:\DriveFormInfo\Adcnydec\AdcnyCck\Crack.h(21,43): warning C4275: 非 dll 接口 class“ImgCal”用作 dll 接口 class“Crack”的基
+  (编译源文件“/Crack.cpp”)
+      D:\DriveFormInfo\Adcnydec\include\ImgCal.h(15,7):
+      参见“ImgCal”的声明
+      D:\DriveFormInfo\Adcnydec\AdcnyCck\Crack.h(21,29):
+      参见“Crack”的声明
+  
+  dllmain.cpp
+  EdgeCal.cpp
+    正在创建库 ..\x64\Release\AdcnyCck.lib 和对象 ..\x64\Release\AdcnyCck.exp
+  正在生成代码
+  Previous IPDB not found, fall back to full compilation.
+  All 303 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  已完成代码的生成
+  AdcnyCck.vcxproj -> D:\DriveFormInfo\Adcnydec\x64\Release\AdcnyCck.dll
+  'pwsh.exe' 不是内部或外部命令，也不是可运行的程序
+  或批处理文件。
