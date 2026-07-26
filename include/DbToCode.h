@@ -2,11 +2,9 @@
 #include <vector>
 #include <string>
 #include <mutex>
-#include <queue>
+#include <Target.h>
 
 class SqlStore;
-#include <InferStore.h>
-#include <Target.h>
 
 
 #ifdef ADCNYDDT_EXPORTS
@@ -37,9 +35,6 @@ public:
 	void toUpDataImgNum(const int& n, const long long& colid);
 	long long combCoilData(bool upCoilum, int arc, char* argv[]);
 	void comCalData(std::vector<std::vector<int>> bboxs, int n);
-	void startInfer(std::vector<modpar> mods,std::string flord);
-	void imgInferToDb(std::vector<std::string> sqls) const;
-	void toInfer(const cv::Mat img, std::vector<std::vector<int>> bbox, long long coild, int modtype, int imgNum, int saveType);
 	const std::string& getDecInsertSqlTemplate() const { return sqlStrBses[1]; }
 
 private:
@@ -50,7 +45,4 @@ private:
 	"UPDATE coilstore SET EndImgId = %d WHERE CoilNum = %lld" };
 	mutable SqlStore* dbConn;
 	mutable std::mutex dbMtx;
-	InferStore* inferstore;
-	std::mutex mtx;
 };
-

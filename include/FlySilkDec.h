@@ -1,4 +1,5 @@
 #pragma once
+#include <memory>
 #include <ImgCal.h>
 #include <EdgeCalSilk.h>
 
@@ -21,7 +22,7 @@ public:
 
 	std::vector<std::vector<int>> getBboxs(int num);
 private:
-	EdgeCalSilk* edgeCal;
+	std::unique_ptr<EdgeCalSilk> edgeCal;
 	std::map<std::string, int> config;
 };
 

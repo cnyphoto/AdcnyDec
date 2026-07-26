@@ -7,7 +7,7 @@ std::vector<int> EdgeCa::getBigBox(cv::Mat binary, int areaValue, bool r)
 
 	cv::Mat labels, stats, centroids;
 
-	int n = connectedComponentsWithStats(binary, labels, stats, centroids, 8, CV_32S);
+	int n = cv::connectedComponentsWithStats(binary, labels, stats, centroids, 8, CV_32S);
 
 	for (int i = 0; i < n; i++)
 	{

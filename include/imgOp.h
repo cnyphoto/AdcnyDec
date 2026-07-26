@@ -25,3 +25,4 @@ public:
 private:
 	std::string folder;
 };
+

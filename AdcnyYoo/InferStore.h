@@ -54,10 +54,9 @@ public:
     }
 
 private:
-    std::string  sqlip;
     std::queue<procDt> procDt_queue;
     std::mutex mtx;
-    std::condition_variable cv;
+    std::condition_variable convar;
     bool start;
     std::vector<YoloTrt*> yolotrts;
     int decw;

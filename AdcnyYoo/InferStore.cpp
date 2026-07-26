@@ -21,7 +21,7 @@ void InferStore::infer(cv::Mat img, std::vector<std::vector<int>> bboxs, long lo
 {
 	std::lock_guard<std::mutex> lock(this->mtx);
 	this->procDt_queue.push(procDt{img,bboxs,coild,modetype,saveType,imgNum});
-	this->cv.notify_one();
+	this->convar.notify_one();
 }
 
 
@@ -32,7 +32,7 @@ void InferStore::inferForeverToStr(std::function<void(std::vector<std::string>)>
         procDt pd;
         {
             std::unique_lock<std::mutex> lock(this->mtx);
-            this->cv.wait(lock, [this] {
+            this->convar.wait(lock, [this] {
                 return !this->procDt_queue.empty() || !this->start;
             });
             if (!this->start) break;
@@ -115,8 +115,8 @@ void InferStore::inferForeverToStr(std::function<void(std::vector<std::string>)>
 
         for (auto& ele : okboxes)
         {
-            char buf[128] = { 0 };
-            sprintf_s(buf, "%d,%d,%d,%d,%d,%d,%d,%d,%d,%lld,%d",
+            char str[128] = { 0 };
+            sprintf_s(str, "%d,%d,%d,%d,%d,%d,%d,%d,%d,%lld,%d",
                 0,
                 pd.bboxs[2][0],
                 static_cast<int>(ele.bbox[0]),
@@ -128,7 +128,7 @@ void InferStore::inferForeverToStr(std::function<void(std::vector<std::string>)>
                 ele.class_id,
                 pd.coild,
                 pd.modetype);
-            strarr.push_back(buf);
+            strarr.push_back(str);
         }
 
         if (strarr.size() > 0)
@@ -154,7 +154,7 @@ void InferStore::setStart(bool b)
 		std::lock_guard<std::mutex> lock(this->mtx);
 		this->start = b;
 	}
-	this->cv.notify_all();
+	this->convar.notify_all();
 }
 
 void InferStore::setMods(std::vector<modpar> mods, std::string folder)

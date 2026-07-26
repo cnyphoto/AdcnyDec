@@ -1,5 +1,6 @@
 #pragma once
 #include <ImgCal.h>
+#include "EdgCalTcm.h"
 
 
 #ifdef ADCNYFAM_EXPORTS
@@ -16,7 +17,6 @@ public:
 	~WholeDec();
 
 	std::vector<int> calSize(cv::Mat calMat) { return { 0 }; };
-	std::vector<int> getEdge(cv::Mat mat1, bool lefted, int ft);
 	int imgValid(cv::Mat mat);
 	cv::Mat setDst(cv::Mat img);
 

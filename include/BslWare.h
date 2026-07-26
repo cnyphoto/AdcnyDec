@@ -6,6 +6,7 @@
 #define ADCNYBSL_API __declspec(dllimport)
 #endif
 
+#include <memory>
 #include <CameraApt.h>
 #include "Bslstore.h"
 
@@ -17,5 +18,5 @@ public:
 	void stop();
 	bool exied;
 private:
-	BslStore* Bsl;
+	std::unique_ptr<BslStore> Bsl;
 };

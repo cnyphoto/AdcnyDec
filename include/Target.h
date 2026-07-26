@@ -17,8 +17,8 @@ typedef struct modpar {
     int slot;
     float conf;
     bool trained;
-    int modw;
-    int modh;
+	int modh;
+	int modw;
 }modpar;
 
 typedef struct SorcePar {
@@ -49,4 +49,5 @@ class __declspec(dllexport) Target
 {
 public:
 	virtual void requestPhoto(const SorcePar& spar, std::function<void(cv::Mat, int)> f) = 0;
+	virtual ~Target() = default;
 };

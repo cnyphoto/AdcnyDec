@@ -30,12 +30,17 @@ void Operation::star(bool c, int a, char *v[])
 	if (a > 4)
 		this->startNum = atoi(v[4]);
 	coild = dtcode->combCoilData(c, a, v);
+	
 	wsoc->setCoil(coild);
+
 	int re = 0;
 	pool->enqueue([this, re]() -> int
 				  {this->runinfer();return 0; });
 	pool->enqueue([this, re]() -> int
 				  {this->runCom(re);return 0; });
+
+	
+
 	for (size_t i = 0; i < this->spar.ascNum; i++)
 	{
 		auto img = createDetector("edgesin");
@@ -101,7 +106,12 @@ void Operation::runDetection(int n) const
 	auto ms = (std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now() - s)).count();
 	std::cout << decs.size() << " ===" << ms << "mm;#" << n << std::endl;
 }
-void Operation::runCom(int n) const { wsoc->runSoc(std::to_string(spar.scoilid), spar.webSockectIpPort); }
+
+void Operation::runCom(int n) const 
+{ 
+	wsoc->runSoc(std::to_string(spar.scoilid), spar.webSockectIpPort); 
+}
+
 void Operation::runinfer() const
 {
 	if (spar.openAied)
@@ -113,10 +123,13 @@ void Operation::runinfer() const
 				for (auto& valStr : sqls) {
 					this->dtcode->combDecValStr(valStr);
 					this->wsoc->sendMessage(valStr);
+					std::cout << valStr<<"==============================================================" << std::endl;
 				}
 			});
 	}
 }
+
+
 void Operation::disOutImg(int r, const cv::Mat d) const
 {
 	pool->enqueue([this, r, d]() -> int

@@ -17,6 +17,6 @@ public:
 	virtual void specificRequest(const SorcePar& spar, std::function<void(cv::Mat, int)> f) = 0;
 	virtual void stop() = 0;
 	virtual ~CameraApt() = default;
-	bool exied;
+	bool exied=false;
 };
 

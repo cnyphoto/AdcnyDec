@@ -80,7 +80,7 @@ public:
         int rl = r - l > img.cols ? img.cols : r - l;
         int bt = b - t > img.rows ? img.rows : b - t;
 
-        return cv::Rect(l<0?0:l, t<0?0:t, rl, bt);
+        return cv::Rect(l < 0 ? 0 : l, t < 0 ? 0 : t, rl, bt);
     }
 
     float iou(float lbox[4], float rbox[4]) {

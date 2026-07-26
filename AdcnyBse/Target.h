@@ -17,6 +17,8 @@ typedef struct modpar {
     int slot;
     float conf;
     bool trained;
+    int modh;
+    int modw;
 }modpar;
 
 typedef struct SorcePar {

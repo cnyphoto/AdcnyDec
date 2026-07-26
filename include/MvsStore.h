@@ -12,7 +12,7 @@
 class MvsStore
 {
 public:
-    MvsStore();
+    MvsStore(int drivesNum);
     ~MvsStore();
 
     static void __stdcall ImageCallBackEx(unsigned char* pData, MV_FRAME_OUT_INFO_EX* pFrameInfo, void* pUser)
@@ -21,8 +21,7 @@ public:
         {
             MvsStore* awcp = (MvsStore*)pUser;
             awcp->boundFunction(cv::Mat(pFrameInfo->nExtendHeight, pFrameInfo->nExtendWidth,CV_8UC1, pData), pFrameInfo->nFrameNum);
-            printf("Get One Frame: Width[%d], Height[%d], nFrameNum[%d]\n",
-                pFrameInfo->nExtendWidth, pFrameInfo->nExtendHeight, pFrameInfo->nFrameNum);
+            printf("Get One Frame: Width[%d], Height[%d], nFrameNum[%d]\n", pFrameInfo->nExtendWidth, pFrameInfo->nExtendHeight, pFrameInfo->nFrameNum);
         }
     }
 
@@ -99,7 +98,6 @@ private:
     void* handle = NULL;
 
     bool runed = true;
-
 };
 
 
