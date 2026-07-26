@@ -5,7 +5,7 @@ int main(int argc, char* argv[])
 {
 	DbToCode dtcode;
 
-	SorcePar spar = dtcode.getPar(1);
+	SorcePar spar = dtcode.getPar();
 
 	std::vector<modpar> mods = dtcode.getMod(spar.id);
 

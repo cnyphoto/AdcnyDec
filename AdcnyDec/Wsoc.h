@@ -26,6 +26,7 @@ public:
 private:
 	long long coilnum;
 	int n;
+	long long a;
 	int boundary;
 	std::function<void(int n, long long coilnum)> onExitCallback;
 	std::atomic<bool> stopRequested{ false };

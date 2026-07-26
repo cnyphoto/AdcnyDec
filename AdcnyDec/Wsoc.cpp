@@ -49,26 +49,30 @@ int Wsoc::runSoc(std::string modetype, std::string webSockectIpPort)
 
     while (ws && ws->getReadyState() != WebSocket::CLOSED && !stopRequested.load())
     {
-        std::string msg = "";
-        ws->send("0#" + modetype + "-" + std::to_string(this->n) + "-" + std::to_string(this->coilnum) + "-" + std::to_string(this->boundary));
-        std::cout << "0#" + modetype + "-" + std::to_string(this->n) << std::endl;
-        ws->poll();
-        ws->dispatch([&msg](const std::string& message)
-            {
-                printf(">>> %s\n", message.c_str());
-                if (message == "5-exit")
-                {
-                    msg = "5-exit";
-                }
-            });
-
-        if (msg == "5-exit")
+        if (a%10==0)
         {
-            if (onExitCallback)
-                onExitCallback(this->n, this->coilnum);
-            ws->close();
-        }
+            ws->send("0#" + modetype + "-" + std::to_string(this->n) + "-" + std::to_string(this->coilnum) + "-" + std::to_string(this->boundary));
+            std::cout << "0#" + modetype + "-" + std::to_string(this->n) << std::endl;
 
+            std::string msg = "";
+            ws->poll();
+            ws->dispatch([&msg](const std::string& message)
+                {
+                    printf(">>> %s\n", message.c_str());
+                    if (message == "5-exit")
+                    {
+                        msg = "5-exit";
+                    }
+                });
+
+            if (msg == "5-exit")
+            {
+                if (onExitCallback)
+                    onExitCallback(this->n, this->coilnum);
+                ws->close();
+            }
+        }
+        
         // 刷出发送队列中的所有消息
         {
             std::queue<std::string> toSend;
@@ -83,7 +87,8 @@ int Wsoc::runSoc(std::string modetype, std::string webSockectIpPort)
             }
         }
 
-        std::this_thread::sleep_for(std::chrono::milliseconds(499));
+		this->a += 1;
+        std::this_thread::sleep_for(std::chrono::milliseconds(49));
     }
 
     // 等待 WebSocket 完全关闭

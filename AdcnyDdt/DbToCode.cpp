@@ -56,9 +56,13 @@ void DbToCode::loadFromIni(const std::string& iniPath)
 		}
 		else if (section == "Database") {
 			if (key == "saveDb")   this->softCfg.saveDb = (value == "1");
+			if (key == "scoilid")  this->softCfg.scoilid = std::stoi(value);
 		}
 		else if (section == "Alert") {
 			if (key == "sendAlert") this->softCfg.sendAlert = (value == "1");
+		}
+		else if (section == "Scoilid") {
+			if (key == "scoilid")  this->softCfg.scoilid = std::stoi(value);
 		}
 	}
 }
@@ -72,12 +76,12 @@ void DbToCode::setConstr(std::string sqlip, int port, std::string user, std::str
 	this->constr.user = user;
 }
 
-SorcePar DbToCode::getPar(int scoild) const
+SorcePar DbToCode::getPar() const
 {
 	SqlStore conn;
 	conn.connect(this->constr.sqlip, this->constr.port, this->constr.user, this->constr.psd, this->constr.dbName);
 	char sql[1024] = { 0 };
-	sprintf_s(sql, "select * from visonpar WHERE scoilid=%d", scoild);
+	sprintf_s(sql, "select * from visonpar WHERE scoilid=%d", softCfg.scoilid);
 	auto res = conn.query(sql);
 
 	unsigned int num_fields;

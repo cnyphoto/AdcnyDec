@@ -26,9 +26,10 @@ public:
 		std::string psd;
 		std::string dbName;
 	}ConStr;
+
 	void setConstr(std::string sqlip, int port, std::string user, std::string psd, std::string dbName);
 	void loadFromIni(const std::string& iniPath = "soft.ini");
-	SorcePar getPar(int scoild) const;
+	SorcePar getPar() const;
 	std::vector<modpar> getMod(int sparid) const;
 	void insetData(const std::string sql) const;
 	void combDecData(std::vector<std::vector<int>> bbox, long long coild, int scoilid);
@@ -42,9 +43,11 @@ public:
 	struct SoftCfg {
 		std::string cameraType   = "folder";
 		std::string detectorType = "edgesin";
+		int scoilid    = 1;
 		bool saveDb    = false;
 		bool sendAlert = false;
 	};
+
 	const SoftCfg& getSoftCfg() const { return softCfg; }
 
 	const ConStr& getConStr() const { return constr; }
