@@ -53,24 +53,24 @@ int Wsoc::runSoc(std::string modetype, std::string webSockectIpPort)
         {
             ws->send("0#" + modetype + "-" + std::to_string(this->n) + "-" + std::to_string(this->coilnum) + "-" + std::to_string(this->boundary));
             std::cout << "0#" + modetype + "-" + std::to_string(this->n) << std::endl;
+        }
 
-            std::string msg = "";
-            ws->poll();
-            ws->dispatch([&msg](const std::string& message)
-                {
-                    printf(">>> %s\n", message.c_str());
-                    if (message == "5-exit")
-                    {
-                        msg = "5-exit";
-                    }
-                });
-
-            if (msg == "5-exit")
+        std::string msg = "";
+        ws->poll();
+        ws->dispatch([&msg](const std::string& message)
             {
-                if (onExitCallback)
-                    onExitCallback(this->n, this->coilnum);
-                ws->close();
-            }
+                printf(">>> %s\n", message.c_str());
+                if (message == "5-exit")
+                {
+                    msg = "5-exit";
+                }
+            });
+
+        if (msg == "5-exit")
+        {
+            if (onExitCallback)
+                onExitCallback(this->n, this->coilnum);
+            ws->close();
         }
         
         // 刷出发送队列中的所有消息
@@ -82,7 +82,7 @@ int Wsoc::runSoc(std::string modetype, std::string webSockectIpPort)
             }
             while (!toSend.empty())
             {
-                ws->send(toSend.front());
+                ws->send("0#dec-" + toSend.front());
                 toSend.pop();
             }
         }

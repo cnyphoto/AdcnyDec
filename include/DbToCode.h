@@ -27,16 +27,16 @@ public:
 		std::string dbName;
 	}ConStr;
 
-	void setConstr(std::string sqlip, int port, std::string user, std::string psd, std::string dbName);
+	void setConstr(const std::string& sqlip, int port, const std::string& user, const std::string& psd, const std::string& dbName);
 	void loadFromIni(const std::string& iniPath = "soft.ini");
 	SorcePar getPar() const;
 	std::vector<modpar> getMod(int sparid) const;
-	void insetData(const std::string sql) const;
-	void combDecData(std::vector<std::vector<int>> bbox, long long coild, int scoilid);
+	void insetData(const std::string& sql) const;
+	void combDecData(const std::vector<std::vector<int>>& bbox, long long coild, int scoilid);
 	void combDecValStr(const std::string& valStr) const;
 	void toUpDataImgNum(const int& n, const long long& colid);
 	long long combCoilData(bool upCoilum, int arc, char* argv[]);
-	void comCalData(std::vector<std::vector<int>> bboxs, int n);
+	void comCalData(const std::vector<std::vector<int>>& bboxs, int n);
 	const std::string& getDecInsertSqlTemplate() const { return sqlStrBses[1]; }
 
 	// 软件配置（来自 soft.ini）

@@ -56,7 +56,6 @@ void DbToCode::loadFromIni(const std::string& iniPath)
 		}
 		else if (section == "Database") {
 			if (key == "saveDb")   this->softCfg.saveDb = (value == "1");
-			if (key == "scoilid")  this->softCfg.scoilid = std::stoi(value);
 		}
 		else if (section == "Alert") {
 			if (key == "sendAlert") this->softCfg.sendAlert = (value == "1");
@@ -67,7 +66,7 @@ void DbToCode::loadFromIni(const std::string& iniPath)
 	}
 }
 
-void DbToCode::setConstr(std::string sqlip, int port, std::string user, std::string psd, std::string dbName)
+void DbToCode::setConstr(const std::string& sqlip, int port, const std::string& user, const std::string& psd, const std::string& dbName)
 {
 	this->constr.sqlip = sqlip;
 	this->constr.port = port;
@@ -144,7 +143,7 @@ std::vector<modpar> DbToCode::getMod(int sparid) const
 	return mods;
 }
 
-void DbToCode::insetData(std::string sql) const
+void DbToCode::insetData(const std::string& sql) const
 {
 	std::lock_guard<std::mutex> lock(dbMtx);
 
@@ -181,7 +180,7 @@ void DbToCode::insetData(std::string sql) const
 	}
 }
 
-void DbToCode::combDecData(std::vector<std::vector<int>> bboxs,long long coild,int scoilid)
+void DbToCode::combDecData(const std::vector<std::vector<int>>& bboxs,long long coild,int scoilid)
 {
 	size_t num = bboxs.size();
 	for (int i = 2; i < num; i++)
@@ -232,7 +231,7 @@ long long DbToCode::combCoilData(bool upCoilum,int arc, char* argv[])
 	return 0;
 }
 
-void DbToCode::comCalData(std::vector<std::vector<int>> bboxs,int n)
+void DbToCode::comCalData(const std::vector<std::vector<int>>& bboxs,int n)
 {
 	size_t num= bboxs.size();
 	char sql[1024] = { 0 };
